@@ -1,22 +1,16 @@
 <template>
     <div class="_main">
         <HeaderCom/>
-        <AboutUs/>
+        <router-view />
     </div>
 </template>
 
 <script>
 import HeaderCom from './header';
-// import FooterCom from './footer';
-// import {svga} from 'vue-svga'
-// import EmailModal from './email-modal'
-
-import AboutUs from './about-us'
-
 
 export default {
     name: 'index',
-    components: {HeaderCom, AboutUs},
+    components: {HeaderCom},
     data() {
         return {
             email: null,

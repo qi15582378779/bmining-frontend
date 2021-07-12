@@ -11,9 +11,10 @@
         </div>
 
         <ul class="_header-right" :class="{'_open': isOpen}">
-            <li v-for="(el, index) in navList" :key="index" @click="toUrl(el.url)">
-                <a :href="el.anchor">{{el.name}}</a>
-                <img src="../../assets/images/bor.svg" alt="" class="_bor-img">
+            <li v-for="(el, index) in navList" :key="index">
+                <router-link :to="el.url" replace :active-class="'_active'">{{el.name}}
+                    <img src="../../assets/images/bor.svg" alt="" class="_bor-img">
+                </router-link>
             </li>
         </ul>
     </div>
@@ -28,19 +29,19 @@ export default {
             navList: [
                 {
                     name: 'ABOUT US',
-                    anchor: '#about_us'
+                    url: '/about-us'
                 },
                 {
                     name: 'OPERAITION',
-                    anchor: '#operation'
+                    url: '/operation'
                 },
                 {
                     name: 'TEAM',
-                    anchor: '#team'
+                    url: '/team'
                 },
                 {
                     name: 'CONTACT',
-                    anchor: '#contact'
+                    url: '/contact'
                 }
             ]
         }
@@ -117,7 +118,9 @@ export default {
                     transition: all .5s;
                 }
 
-                &:hover {
+                &:hover, ._active {
+                    color: #9BC456;
+
                     a {
                         color: #9BC456;
                     }
@@ -125,11 +128,6 @@ export default {
                     ._bor-img {
                         transform: translateX(-50%) scale(1, 1);
                     }
-                }
-
-
-                ._active {
-                    color: #9BC456;
                 }
             }
         }

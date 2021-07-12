@@ -12,14 +12,28 @@ Router.prototype.push = function push(location) {
 export default new Router({
     mode: 'history',
     routes: [
+
+        {
+            path: '/',
+            name: 'Main',
+            component: () => import('../pages/main/index'),
+            children: [
+                {
+                    path: 'about-us',
+                    name: 'about-us',
+                    component: () => import('../pages/about-us/about-us')
+                },
+                {
+                    path: 'operation',
+                    name: 'operation',
+                    component: () => import('../pages/operation/operation')
+                }
+            ],
+            redirect: '/about-us',
+        },
         {
             path: '*',
             redirect: '/',
         },
-        {
-            path: '/',
-            name: 'Main',
-            component: () => import('../pages/main/index')
-        }
     ]
 })
