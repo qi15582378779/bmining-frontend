@@ -1,0 +1,151 @@
+<template>
+    <div class="_team">
+        <div class="_team-bg">
+            <div>
+                <p>TEAM</p>
+                <p>A strong team of executives and directors with
+                    deep experience in blockchain, software, Bitcoin mining,
+                    investment banking, venture capital, and government.</p>
+            </div>
+        </div>
+
+        <div class="_container">
+            <div class="_team-title">
+                Meet Our Management Team
+            </div>
+            <ul class="_team-list">
+                <li v-for="(el, index) of teamList" :key="index">
+                    <div>
+                        <img :src="el.imgUrl" alt="">
+                        <p>{{el.name}}</p>
+                        <p>{{el.post}}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'team',
+    data() {
+        return {
+            teamList: [
+                {
+                    imgUrl: require('../../assets/images/team/team-1.png'),
+                    name: 'Tyler Page',
+                    post: 'CFO'
+                },
+                {
+                    imgUrl: require('../../assets/images/team/team-2.png'),
+                    name: 'Ed Farrell',
+                    post: 'CEO'
+                },
+                {
+                    imgUrl: require('../../assets/images/team/team-3.png'),
+                    name: 'Patrick Kelly',
+                    post: 'COO'
+                },
+                {
+                    imgUrl: require('../../assets/images/team/team-4.png'),
+                    name: 'Samy Biyadi',
+                    post: 'Head of Power'
+                },
+                {
+                    imgUrl: require('../../assets/images/team/team-5.png'),
+                    name: 'Jaime Leverton',
+                    post: 'General Counsel'
+                },
+                {
+                    imgUrl: require('../../assets/images/team/team-6.png'),
+                    name: 'Jason Zaluski',
+                    post: 'Head of Technology'
+                }
+            ]
+        }
+    }
+}
+</script>
+
+<style scoped lang="scss">
+    ._team {
+        padding-bottom: 52px;
+
+        ._team-bg {
+            width: 100%;
+            height: 460px;
+            background-image: url("../../assets/images/team/team-bg.png");
+            background-position: 100% 100%;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            p:nth-of-type(1) {
+                font-weight: 500;
+                font-size: 50px;
+                line-height: 50px;
+                color: #9BC456;
+                text-shadow: 4px 3px 4px rgba(192, 243, 106, 0.2);
+                margin-bottom: 12px;
+            }
+
+            p:nth-of-type(2) {
+                font-size: 28px;
+                line-height: 28px;
+                color: #FFFFFF;
+                width: 700px;
+            }
+        }
+
+        ._team-title {
+            margin-top: 113px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 36px;
+            color: #ffffff;
+            margin-bottom: 45px;
+        }
+
+        ._team-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            li {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                width: 352px;
+                margin-bottom: 48px;
+
+                img {
+                    margin-bottom: 18px;
+                }
+
+                p {
+                    width: 100%;
+
+                    &:nth-of-type(1) {
+                        font-weight: 500;
+                        font-size: 24px;
+                        line-height: 24px;
+                        color: #FFFFFF;
+                        margin-bottom: 12px;
+                    }
+
+                    &:nth-of-type(2) {
+                        font-size: 18px;
+                        line-height: 18px;
+                        color: #8D8D8D;
+                    }
+                }
+
+            }
+        }
+    }
+</style>

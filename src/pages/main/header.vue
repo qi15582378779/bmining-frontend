@@ -109,7 +109,7 @@ export default {
                     bottom: -17px;
                     left: 50%;
                     transform: translateX(-50%) scale(0, 0);
-                    transition: all .5s;
+                    transition: all .3s;
                 }
 
                 a {
