@@ -1,75 +1,22 @@
 <template>
-    <div class="_main"
-        :class="[switchClassName(activeIndex), {'_an-bg': bgShow}]"
-        :style="{'background-color': switchBgColor(prev)}">
+    <div class="_main">
         <HeaderCom/>
-        <div class="_main-container">
-            <div class="_token-img">
-                <div :class="[{'_show-an': topGifFlag}]">
-                    <template v-for="(el, index) in tokenList">
-                        <div :key="index"
-                            @click="switchClick(index)"
-                            @mouseover="imgHover(el)"
-                            @mouseleave="imgLeave(el)"
-                            :style="{'height': el.height}"
-                            :class="[{'_active': activeIndex === index}, {'_an-top': topImgFlag}]">
-                            <img :src="el.defaultImg" alt="" :class="{'_opacity-1': el.isShow}">
-                            <img :src="el.activeImg" alt="" :class="{'_opacity-0': !el.isShow}">
-                        </div>
-                    </template>
-                </div>
-
-                <!--                <img src="../../assets/images/main/top-bg.gif" alt=""-->
-                <!--                    :class="['_token-bg',{'_show-gif': topGifFlag}]"/>-->
-            </div>
-
-            <div class="_content">
-                <div class="_content-left">
-                    <div class="_left-top">
-                        <p>Switch</p>
-                        <p>on your wealth</p>
-                        <p>Switch allows true asset movement and liquidity redistribution
-                            cross-chain</p>
-                    </div>
-
-                    <div class="_left-center">
-                        <el-button>Learn more</el-button>
-                        <el-button @click="toApp"><i class="iconfont">&#xe61d;</i>Enter app
-                        </el-button>
-                    </div>
-
-                    <div class="_left-bottom">
-                        <p>BE THE FIRST TO TRY SWITCH</p>
-                        <button @click="showModal">
-                            <span>RESERVE YOUR E-MAILBE</span>
-                            <span><i class="iconfont">&#xe611;</i></span>
-                        </button>
-                    </div>
-                </div>
-                <div class="_content-right">
-                    <template v-for="(el, index) in chainBg">
-                        <svga :src="el" :key="index" :options="options"
-                            class="_right-img"
-                            :class="{'_opacity-1': activeIndex === index}"/>
-                    </template>
-                </div>
-            </div>
-        </div>
-        <FooterCom/>
-        <email-modal :visible="isShow" :theme="switchClassName(activeIndex)" @close="closeModal"/>
+        <AboutUs/>
     </div>
 </template>
 
 <script>
 import HeaderCom from './header';
-import FooterCom from './footer';
-import {svga} from 'vue-svga'
-import EmailModal from './email-modal'
+// import FooterCom from './footer';
+// import {svga} from 'vue-svga'
+// import EmailModal from './email-modal'
+
+import AboutUs from './about-us'
 
 
 export default {
     name: 'index',
-    components: {HeaderCom, FooterCom, EmailModal, svga},
+    components: {HeaderCom, AboutUs},
     data() {
         return {
             email: null,
@@ -81,66 +28,7 @@ export default {
             bgShow: false,
             topGifFlag: false,
             topImgFlag: false,
-            tokenList: [
-                {
-                    name: 'eth',
-                    height: window.innerWidth < 768 ? '80px' : '159px',
-                    isShow: false,
-                    defaultImg: require('../../assets/images/main/eth-default.svg'),
-                    activeImg: require('../../assets/images/main/eth-active.svg')
-                },
-                {
-                    name: 'bnb',
-                    height: window.innerWidth < 768 ? '60px' : '119px',
-                    isShow: false,
-                    defaultImg: require('../../assets/images/main/bnb-default.svg'),
-                    activeImg: require('../../assets/images/main/bnb-active.svg')
-                },
-                {
-                    name: 'ht',
-                    height: window.innerWidth < 768 ? '100px' : '199px',
-                    isShow: false,
-                    defaultImg: require('../../assets/images/main/ht-default.svg'),
-                    activeImg: require('../../assets/images/main/ht-active.svg')
-                },
-                {
-                    name: 'fantom',
-                    height: window.innerWidth < 768 ? '80px' : '159px',
-                    isShow: false,
-                    defaultImg: require('../../assets/images/main/fantom-default.svg'),
-                    activeImg: require('../../assets/images/main/fantom-active.svg')
-                },
-                {
-                    name: 'solana',
-                    height: window.innerWidth < 768 ? '61px' : '122px',
-                    isShow: false,
-                    defaultImg: require('../../assets/images/main/solana-default.svg'),
-                    activeImg: require('../../assets/images/main/solana-active.svg')
-                },
-                {
-                    name: 'polygon',
-                    height: window.innerWidth < 768 ? '80px' : '159px',
-                    isShow: false,
-                    defaultImg: require('../../assets/images/main/polygon-default.svg'),
-                    activeImg: require('../../assets/images/main/polygon-active.svg')
-                },
-                {
-                    name: 'xDai',
-                    height: window.innerWidth < 768 ? '51px' : '101px',
-                    isShow: false,
-                    defaultImg: require('../../assets/images/main/xDai-default.svg'),
-                    activeImg: require('../../assets/images/main/xDai-active.svg')
-                },
-            ],
-            chainBg: [
-                './svga/eth.svga',
-                './svga/bnb.svga',
-                './svga/ht.svga',
-                './svga/fantom.svga',
-                './svga/solana.svga',
-                './svga/polygon.svga',
-                './svga/xDai.svga',
-            ],
+
             options: {
                 loop: 0,
                 fillMode: 'forwards',
@@ -359,7 +247,6 @@ export default {
         /*background-color: var(--col-bg-75);*/
         position: relative;
         transition: all .2s;
-        overflow: hidden;
 
         &::before {
             position: absolute;

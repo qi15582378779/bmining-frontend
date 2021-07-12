@@ -42,7 +42,8 @@ html, body {
     font-family: Poppins;
     font-size: 16px;
     font-style: normal;
-    overflow: hidden;
+    //overflow: hidden;
+    background-color: #171E25;
 }
 
 a,
@@ -67,6 +68,11 @@ h3 {
 
 button {
     outline: none;
+}
+
+._container {
+    width: 1200px;
+    margin: 0 auto;
 }
 
 @keyframes bgTran {

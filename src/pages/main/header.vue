@@ -7,12 +7,13 @@
                 <img class="_header-logo" src="../../assets/images/logo/logo.svg" alt="">
             </div>
 
-            <a :href="appUrl" target="_blank" class="_h5-app">Enter app</a>
+            <a :name="appUrl" target="_blank" class="_h5-app">Enter app</a>
         </div>
 
         <ul class="_header-right" :class="{'_open': isOpen}">
             <li v-for="(el, index) in navList" :key="index" @click="toUrl(el.url)">
-                {{el.name}}
+                <a :href="el.anchor">{{el.name}}</a>
+                <img src="../../assets/images/bor.svg" alt="" class="_bor-img">
             </li>
         </ul>
     </div>
@@ -24,23 +25,22 @@ export default {
     data() {
         return {
             isOpen: false,
-            appUrl: location.host === 'https://switchfinance.xyz' ? 'https://app.switchfinance.xyz/' : 'https://app-dev.switchfinance.xyz/',
             navList: [
                 {
-                    name: 'Goverance',
-                    url: ''
+                    name: 'ABOUT US',
+                    anchor: '#about_us'
                 },
                 {
-                    name: 'Docs',
-                    url: ''
+                    name: 'OPERAITION',
+                    anchor: '#operation'
                 },
                 {
-                    name: 'Blog',
-                    url: ''
+                    name: 'TEAM',
+                    anchor: '#team'
                 },
                 {
-                    name: 'Enter app',
-                    url: location.host === 'https://switchfinance.xyz' ? 'https://app.switchfinance.xyz/' : 'https://app-dev.switchfinance.xyz/'
+                    name: 'CONTACT',
+                    anchor: '#contact'
                 }
             ]
         }
@@ -67,8 +67,9 @@ export default {
         display: flex;
         justify-content: space-between;
         padding: 0 44px;
-        margin-bottom: -80px;
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
         z-index: 99;
 
         ._header-left {
@@ -95,35 +96,40 @@ export default {
 
             li {
                 margin-right: 100px;
+                cursor: pointer;
+                position: relative;
 
                 &:nth-last-of-type(1) {
                     margin-right: 0;
-                    width: 146px;
-                    height: 34px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background: var(--col-bg);
-                    border-radius: 8px;
-                    color: #ffffff;
-
-                    &:hover {
-                        color: #ffffff;
-                    }
                 }
 
-                font-size: 16px;
-                color: #8899A7;
-                transition: all .2s;
-                cursor: pointer;
+                ._bor-img {
+                    position: absolute;
+                    bottom: -17px;
+                    left: 50%;
+                    transform: translateX(-50%) scale(0, 0);
+                    transition: all .5s;
+                }
+
+                a {
+                    font-size: 16px;
+                    color: #ffffff;
+                    transition: all .5s;
+                }
 
                 &:hover {
-                    color: var(--col-active);
+                    a {
+                        color: #9BC456;
+                    }
+
+                    ._bor-img {
+                        transform: translateX(-50%) scale(1, 1);
+                    }
                 }
 
 
                 ._active {
-                    color: var(--col-active);
+                    color: #9BC456;
                 }
             }
         }
