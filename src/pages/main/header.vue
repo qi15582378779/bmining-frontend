@@ -1,18 +1,22 @@
 <template>
-    <div class="_main-header">
+    <div class="_main-header"
+        :style="{'background-color': 'rgba(255, 255, 255,' + scrollTop/300 +')'}"
+        :class="{'_fixed': isShow}">
         <div class="_header-left">
             <div>
                 <i class="iconfont" v-html="isOpen ? '&#xe61f;' : '&#xe61e;'"
                     @click="openClick"></i>
                 <img class="_header-logo" src="../../assets/images/logo/logo.svg" alt="">
             </div>
-
-            <a :name="appUrl" target="_blank" class="_h5-app">Enter app</a>
         </div>
 
         <ul class="_header-right" :class="{'_open': isOpen}">
             <li v-for="(el, index) in navList" :key="index">
-                <router-link :to="el.url" replace :active-class="'_active'">{{el.name}}
+                <router-link
+                    :to="el.url"
+                    replace
+                    :active-class="'_active'"
+                    :style="{'color': 'rgb(' + a +',' + b +',' + c +')'}">{{el.name}}
                     <img src="../../assets/images/bor.svg" alt="" class="_bor-img">
                 </router-link>
             </li>
@@ -21,6 +25,8 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex';
+
 export default {
     name: 'header-index',
     data() {
@@ -43,7 +49,49 @@ export default {
                     name: 'CONTACT',
                     url: '/contact'
                 }
-            ]
+            ],
+            a: 255,
+            b: 255,
+            c: 255,
+            isShow: false
+        }
+    },
+    computed: {
+        ...mapGetters({
+            scrollTop: 'getScrollTop',
+            direction: 'getDirection'
+        })
+    },
+    watch: {
+        scrollTop: {
+            handler(val) {
+                console.log('val ===>', val)
+                this.isShow = val >= 300;
+                if (this.direction === 'down' && val <= 300) {
+                    this.a = this.a <= 30 ? 30 : (this.a - val / 10);
+                    this.b = this.b <= 35 ? 35 : (this.b - val / 10);
+                    this.c = this.c <= 65 ? 65 : (this.c - val / 10);
+                }
+
+                if (this.direction === 'up' && val <= 300) {
+                    this.a = this.a >= 255 ? 255 : (this.a + val / 20);
+                    this.b = this.b >= 255 ? 255 : (this.b + val / 20);
+                    this.c = this.c >= 255 ? 255 : (this.c + val / 20);
+                }
+
+                if (val > 300) {
+                    this.a = 30;
+                    this.b = 35;
+                    this.c = 65
+                }
+
+                if (val < 1) {
+                    this.a = 255;
+                    this.b = 255;
+                    this.c = 255
+                }
+            },
+            deep: true
         }
     },
     methods: {
@@ -72,6 +120,7 @@ export default {
         top: 0;
         left: 0;
         z-index: 99;
+        transition: all .5s;
 
         ._header-left {
             display: flex;
@@ -114,19 +163,28 @@ export default {
 
                 a {
                     font-size: 16px;
-                    color: #ffffff;
-                    transition: all .5s;
-                }
+                    transition: all 1s;
 
-                &:hover, ._active {
-                    color: #9BC456;
+                    &:hover, &._active {
+                        color: #9BC456 !important;
 
-                    a {
-                        color: #9BC456;
+                        ._bor-img {
+                            transform: translateX(-50%) scale(1, 1);
+                        }
                     }
+                }
+            }
+        }
+    }
 
-                    ._bor-img {
-                        transform: translateX(-50%) scale(1, 1);
+    ._fixed {
+        box-shadow: 0 4px 4px rgba(249, 218, 218, 0.25);
+
+        ._header-right {
+            li {
+                a {
+                    &:hover, &._active {
+                        color: #345FFA !important;
                     }
                 }
             }
