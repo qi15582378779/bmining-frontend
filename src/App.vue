@@ -11,8 +11,19 @@ export default {
     name: 'App',
     data() {
         return {
-            i: 0
+            i: 0,
+            isRouterAlive: false
         }
+    },
+    created() {
+        setTimeout(() => {
+            require(['skrollr'], function (skrollr) {
+                console.log('skrollr', skrollr)
+                skrollr.init();
+                document.getElementById('screen-loading').style.display = 'none';
+                document.getElementById('app').style.display = 'block';
+            });
+        }, 1000)
     },
     mounted() {
         window.addEventListener('scroll', this.handleScroll)

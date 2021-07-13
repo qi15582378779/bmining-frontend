@@ -38,7 +38,7 @@
 
 html, body {
     width: 100%;
-    height: 100%;
+    height: 100% !important;
     font-family: Poppins;
     font-size: 16px;
     font-style: normal;
@@ -74,10 +74,10 @@ button {
     width: 1200px;
     margin: 0 auto;
 }
-
+$top1: 100px;
 @keyframes tranTop {
     0% {
-        transform: translateY(90px) scale(0, 0);
+        transform: translateY($top1) scale(0, 0);
         opacity: 0;
     }
     100% {

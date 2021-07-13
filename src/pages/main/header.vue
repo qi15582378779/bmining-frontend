@@ -1,7 +1,8 @@
 <template>
     <div class="_main-header"
-        :style="{'background-color': 'rgba(255, 255, 255,' + scrollTop/300 +')'}"
-        :class="{'_fixed': isShow}">
+        :class="{'_fixed': isShow}"
+        data-0="background-color: rgba(255, 255, 255, 0);"
+        data-300="background-color: rgba(255, 255, 255, 1);">
         <div class="_header-left">
             <div>
                 <i class="iconfont" v-html="isOpen ? '&#xe61f;' : '&#xe61e;'"
@@ -14,9 +15,9 @@
             <li v-for="(el, index) in navList" :key="index">
                 <router-link
                     :to="el.url"
-                    replace
                     :active-class="'_active'"
-                    :style="{'color': 'rgb(' + a +',' + b +',' + c +')'}">{{el.name}}
+                    data-0="color: rgb(255, 255, 255);"
+                    data-300="color: rgb(30, 35, 65);">{{el.name}}
                     <img src="../../assets/images/bor.svg" alt="" class="_bor-img">
                 </router-link>
             </li>
@@ -65,7 +66,6 @@ export default {
     watch: {
         scrollTop: {
             handler(val) {
-                console.log('val ===>', val)
                 this.isShow = val >= 300;
                 if (this.direction === 'down' && val <= 300) {
                     this.a = this.a <= 30 ? 30 : (this.a - val / 10);
@@ -92,7 +92,18 @@ export default {
                 }
             },
             deep: true
-        }
+        },
+        $route: {
+            handler(val) {
+                console.log('val', val)
+                require(['skrollr'], function (skrollr) {
+                    console.log('skrollr', skrollr)
+                    skrollr.init();
+                    skrollr.refresh();
+                });
+            },
+            deep: true
+        },
     },
     methods: {
         openClick() {
@@ -164,6 +175,7 @@ export default {
                 a {
                     font-size: 16px;
                     transition: all 1s;
+                    color: #ffffff;
 
                     &:hover, &._active {
                         color: #9BC456 !important;

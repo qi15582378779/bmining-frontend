@@ -14,9 +14,11 @@
                 Meet Our Management Team
             </div>
             <ul class="_team-list">
-                <li v-for="(el, index) of teamList" :key="index">
+                <li v-for="(el, index) of teamList" :key="index" :class="{'_active': active}">
                     <div>
-                        <img :src="el.imgUrl" alt="">
+                        <div class="_img-con">
+                            <img :src="el.imgUrl" alt="">
+                        </div>
                         <p>{{el.name}}</p>
                         <p>{{el.post}}</p>
                     </div>
@@ -62,8 +64,14 @@ export default {
                     name: 'Jason Zaluski',
                     post: 'Head of Technology'
                 }
-            ]
+            ],
+            active: false
         }
+    },
+    mounted() {
+        setTimeout(() => {
+            this.active = true;
+        }, 10)
     }
 }
 </script>
@@ -122,9 +130,23 @@ export default {
                 flex-wrap: wrap;
                 width: 352px;
                 margin-bottom: 48px;
+                opacity: 0;
+                transition: opacity .6s ease;
+
+
+                ._img-con {
+                    width: 352px;
+                    overflow: hidden;
+                    margin-bottom: 18px;
+                }
 
                 img {
-                    margin-bottom: 18px;
+                    transition: all .3s ease-in-out;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
                 }
 
                 p {
@@ -144,7 +166,38 @@ export default {
                         color: #8D8D8D;
                     }
                 }
+            }
 
+            ._active {
+                &:nth-of-type(1) {
+                    transition-delay: .1s;
+                    opacity: 1;
+                }
+
+                &:nth-of-type(2) {
+                    transition-delay: .2s;
+                    opacity: 1;
+                }
+
+                &:nth-of-type(3) {
+                    opacity: 1;
+                    transition-delay: .3s;
+                }
+
+                &:nth-of-type(4) {
+                    opacity: 1;
+                    transition-delay: .4s;
+                }
+
+                &:nth-of-type(5) {
+                    opacity: 1;
+                    transition-delay: .5s;
+                }
+
+                &:nth-of-type(6) {
+                    opacity: 1;
+                    transition-delay: .6s;
+                }
             }
         }
     }

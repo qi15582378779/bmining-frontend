@@ -4,16 +4,17 @@
             <div @click="test">
                 <p>One of world-leading</p>
                 <p>crypto currency mining company</p>
-
-                <h1>{{scrollTop}}</h1>
             </div>
         </div>
 
         <div class="_about-all">
-            <h3><span>ALL</span> IN ONE - <span>ALL</span> IN BMINING</h3>
+            <h3>
+                <span>ALL</span>
+                IN ONE - <span>ALL</span> IN BMINING</h3>
 
             <ul class="_all-list">
-                <li v-for="(el, index) of allList" :key="index">
+                <li v-for="(el, index) of allList" :key="index"
+                    :class="{'_an-top': upFlag}">
                     <img :src="el.img" alt="">
                     <p>{{el.name}}</p>
                 </li>
@@ -70,13 +71,33 @@ export default {
                     title: 'World-class technology crew',
                     url: require('../../assets/images/about-us/lead-4.svg'),
                 }
-            ]
+            ],
+            tranY1: 100,
+            aphy: 0,
+            topFlag: false,
+            upFlag: false
         }
     },
     computed: {
         ...mapGetters({
-            scrollTop: 'getScrollTop'
+            scrollTop: 'getScrollTop',
+            direction: 'getDirection'
         })
+    },
+    watch: {
+        scrollTop: {
+            handler(val) {
+                if (this.direction === 'down' && val > 200) {
+                    this.topFlag = true;
+                    this.upFlag = true;
+
+                }
+                if (this.direction === 'up' && val>100) {
+                    this.upFlag = true;
+                }
+            },
+            deep: true
+        }
     },
     mounted() {
 
@@ -107,7 +128,6 @@ export default {
             justify-content: center;
             color: #9BC456;
 
-
             p {
                 width: 100%;
                 font-weight: 500;
@@ -115,9 +135,7 @@ export default {
                 line-height: 50px;
                 text-shadow: 4px 3px 4px rgba(192, 243, 106, 0.2);
                 text-align: center;
-                opacity: 0;
                 animation: tranTop 1.5s ease-in-out;
-                animation-fill-mode: forwards;
             }
         }
 
@@ -133,6 +151,10 @@ export default {
                 font-weight: 400;
                 letter-spacing: 0.1em;
                 margin-bottom: 68px;
+                transition: opacity .6s ease;
+                transition-delay: .3s;
+                /*opacity: 0;*/
+
 
                 span:nth-of-type(1) {
                     color: #345FFA;
@@ -144,12 +166,29 @@ export default {
             }
         }
 
+        ._an-top {
+            /*animation: tranTop 2s ease-in-out;*/
+            /*animation-fill-mode: forwards;*/
+            opacity: 1 !important;
+        }
+
         ._all-list {
             display: flex;
             justify-content: center;
 
             li {
                 text-align: center;
+                transition: opacity .6s ease;
+                opacity: 0;
+                &:nth-of-type(1) {
+                    transition-delay: .3s;
+                }
+                &:nth-of-type(2) {
+                    transition-delay: .4s;
+                }
+                &:nth-of-type(3) {
+                    transition-delay: .5s;
+                }
 
                 img {
                     width: 89px;
