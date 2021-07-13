@@ -5,7 +5,7 @@
                 <p>One of world-leading</p>
                 <p>crypto currency mining company</p>
 
-<!--                <h1>{{scrollTops}}</h1>-->
+                <h1>{{scrollTop}}</h1>
             </div>
         </div>
 
@@ -33,11 +33,10 @@
 </template>
 
 <script>
-
+import {mapGetters} from 'vuex';
 
 export default {
     name: 'about-us',
-    inject: ['scrollTop'],
     data() {
         return {
             allList: [
@@ -74,16 +73,17 @@ export default {
             ]
         }
     },
-
-    // computed: {
-    //     ...storeHelper.mapState(['scrollTops'])
-    // },
+    computed: {
+        ...mapGetters({
+            scrollTop: 'getScrollTop'
+        })
+    },
     mounted() {
 
     },
     methods: {
         test() {
-            console.log('this.scrollTops', this.scrollTop())
+            console.log('this.scrollTops', this.scrollTop)
         }
     }
 }

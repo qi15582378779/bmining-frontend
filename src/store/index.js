@@ -6,16 +6,17 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     namespaced: true,
     state: {
-        scrollTops: 0
+        scrollTop: 0
     },
     getters: {
-        scrollTops(state) {
-            return state.scrollTops
+        getScrollTop(state) {
+            return state.scrollTop
         }
     },
     mutations: {
         setScrollTop(state, val) {
-            state.scrollTops = val
+            console.log('val', val)
+            state.scrollTop = val
         }
     }
 })
