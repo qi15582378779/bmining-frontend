@@ -1,9 +1,11 @@
 <template>
     <div class="_about-us">
         <div class="_about-bg">
-            <div>
+            <div @click="test">
                 <p>One of world-leading</p>
                 <p>crypto currency mining company</p>
+
+<!--                <h1>{{scrollTops}}</h1>-->
             </div>
         </div>
 
@@ -32,8 +34,10 @@
 
 <script>
 
+
 export default {
     name: 'about-us',
+    inject: ['scrollTop'],
     data() {
         return {
             allList: [
@@ -69,6 +73,18 @@ export default {
                 }
             ]
         }
+    },
+
+    // computed: {
+    //     ...storeHelper.mapState(['scrollTops'])
+    // },
+    mounted() {
+
+    },
+    methods: {
+        test() {
+            console.log('this.scrollTops', this.scrollTop())
+        }
     }
 }
 </script>
@@ -99,6 +115,9 @@ export default {
                 line-height: 50px;
                 text-shadow: 4px 3px 4px rgba(192, 243, 106, 0.2);
                 text-align: center;
+                opacity: 0;
+                animation: tranTop 1.5s ease-in-out;
+                animation-fill-mode: forwards;
             }
         }
 

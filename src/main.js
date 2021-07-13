@@ -6,6 +6,7 @@ import './assets/style/base.scss';
 import './assets/style/element-ui.scss';
 import './assets/style/theme.scss';
 import {svga} from 'vue-svga';
+import store from './store/index'
 
 import {
     Button,
@@ -28,5 +29,6 @@ Vue.use(svga);
 
 new Vue({
     render: h => h(App),
-    router
+    router,
+    store
 }).$mount('#app')

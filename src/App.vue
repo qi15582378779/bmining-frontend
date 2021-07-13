@@ -8,7 +8,29 @@
 
 
 export default {
-    name: 'App'
+    name: 'App',
+    provide() {
+        return {
+            scrollTop: this.num
+        }
+    },
+    data() {
+        return {
+            num: 0
+        }
+    },
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll)
+    },
+    methods: {
+        handleScroll() {
+            let scrollTop = window.pageXOffset ||
+                document.documentElement.scrollTop ||
+                document.body.scrollTop;
+
+            this.$store.commit('setScrollTop', scrollTop);
+        }
+    }
 }
 </script>
 

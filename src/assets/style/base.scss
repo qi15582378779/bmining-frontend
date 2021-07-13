@@ -75,142 +75,15 @@ button {
     margin: 0 auto;
 }
 
-@keyframes bgTran {
+@keyframes tranTop {
     0% {
-        background: #F0F3F6;
-    }
-    50% {
-        background: rgba(var(--col-bg), .75);
+        transform: translateY(90px) scale(0, 0);
+        opacity: 0;
     }
     100% {
-        background: #F0F3F6;
+        transform: translateY(0) scale(1, 1);
+        opacity: 1;
     }
 }
 
-@keyframes tranY1 {
-    0% {
-        transform: rotate(0);
-    }
-    25% {
-        transform: rotate(-20deg);
-    }
-    75% {
-        transform: rotate(10deg);
-    }
-    100% {
-        transform: rotate(0);
-    }
-}
-
-@keyframes tranY2 {
-    0% {
-        transform: rotate(0);
-    }
-    25% {
-        transform: rotate(20deg);
-    }
-    75% {
-        transform: rotate(-15deg);
-    }
-    100% {
-        transform: rotate(0);
-    }
-}
-
-@keyframes tranY3 {
-    0% {
-        transform: rotate(0);
-    }
-    25% {
-        transform: rotate(40deg);
-    }
-    75% {
-        transform: rotate(-20deg);
-    }
-    100% {
-        transform: rotate(0);
-    }
-}
-
-@keyframes tranY4 {
-    0% {
-        transform: rotate(0);
-    }
-    25% {
-        transform: rotate(-10deg);
-    }
-    75% {
-        transform: rotate(20deg);
-    }
-    100% {
-        transform: rotate(0);
-    }
-}
-
-@keyframes tranY5 {
-    0% {
-        transform: rotate(0);
-    }
-    25% {
-        transform: rotate(9deg);
-    }
-    75% {
-        transform: rotate(-10deg);
-    }
-    100% {
-        transform: rotate(0);
-    }
-}
-
-@keyframes tranY6 {
-    0% {
-        transform: rotate(0);
-    }
-    25% {
-        transform: rotate(-15deg);
-    }
-    75% {
-        transform: rotate(10deg);
-    }
-    100% {
-        transform: rotate(0);
-    }
-}
-
-@keyframes tranY7 {
-    0% {
-        transform: rotate(0);
-    }
-    25% {
-        transform: rotate(-12deg);
-    }
-    75% {
-        transform: rotate(7deg);
-    }
-    100% {
-        transform: rotate(0);
-    }
-}
-
-@keyframes widthTran {
-    from {
-        transform: translate(-50%, -50%) scale(0, 0);
-    }
-    to {
-        transform: translate(-50%, -50%) scale(1.5, 1.5);
-    }
-}
-
-
-@keyframes topTran {
-    0% {
-        margin-top: 0;
-    }
-    50% {
-        margin-top: -100%;
-    }
-    100% {
-        margin-top: 0;
-    }
-}
 
