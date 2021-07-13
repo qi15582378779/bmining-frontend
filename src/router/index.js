@@ -32,6 +32,11 @@ export default new Router({
                     path: 'team',
                     name: 'team',
                     component: () => import('../pages/team/team')
+                },
+                {
+                    path: 'contact',
+                    name: 'contact',
+                    component: () => import('../pages/contact/contact')
                 }
             ],
             redirect: '/about-us',
