@@ -71,7 +71,7 @@ export default {
 <style scoped lang="scss">
     ._operation {
         width: 100%;
-        padding-bottom: 52px;
+        /*padding-bottom: 52px;*/
 
         ._operation-bg {
             width: 100%;
@@ -138,11 +138,11 @@ export default {
                 }
 
                 &:nth-of-type(3) div {
-                    width: 665px;
+                    width: 600px;
                 }
 
                 &:nth-of-type(6) div {
-                    width: 665px;
+                    width: 600px;
                 }
 
                 & > div {

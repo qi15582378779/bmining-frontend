@@ -42,8 +42,9 @@ html, body {
     font-family: Poppins;
     font-size: 16px;
     font-style: normal;
-    //overflow: hidden;
     background-color: #171E25;
+    touch-action: pan-y;
+    overflow: auto !important;
 }
 
 a,
@@ -74,14 +75,15 @@ button {
     width: 1200px;
     margin: 0 auto;
 }
+
 $top1: 100px;
 @keyframes tranTop {
     0% {
-        transform: translateY($top1) scale(0, 0);
+        transform: translateY($top1);
         opacity: 0;
     }
     100% {
-        transform: translateY(0) scale(1, 1);
+        transform: translateY(0);
         opacity: 1;
     }
 }

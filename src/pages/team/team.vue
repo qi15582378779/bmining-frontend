@@ -143,7 +143,6 @@ export default {
                 opacity: 0;
                 transition: opacity .6s ease;
 
-
                 ._img-con {
                     width: 352px;
                     overflow: hidden;
@@ -161,6 +160,7 @@ export default {
 
                 p {
                     width: 100%;
+                    transition: color .3s ease;
 
                     &:nth-of-type(1) {
                         font-weight: 500;
@@ -174,6 +174,12 @@ export default {
                         font-size: 18px;
                         line-height: 18px;
                         color: #8D8D8D;
+                    }
+                }
+
+                &:hover{
+                    p {
+                        color: #9BC456;
                     }
                 }
             }
