@@ -53,13 +53,17 @@ export default {
                     txt: 'we’re strategically positioned to remain at the forefront of the cryptocurrency mining market.'
                 },
             ],
-            activeListFlag: false
+            activeListFlag: false,
+            timer: null
         }
     },
     mounted() {
-        setTimeout(() => {
+        this.timer = setTimeout(() => {
             this.activeListFlag = true
         }, 100)
+    },
+    destroyed() {
+        clearTimeout(this.timer)
     }
 }
 </script>

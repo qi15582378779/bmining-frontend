@@ -65,13 +65,17 @@ export default {
                     post: 'Head of Technology'
                 }
             ],
-            active: false
+            active: false,
+            timer: null
         }
     },
     mounted() {
-        setTimeout(() => {
+        this.timer = setTimeout(() => {
             this.active = true;
         }, 100)
+    },
+    destroyed() {
+        clearTimeout(this.timer)
     }
 }
 </script>
