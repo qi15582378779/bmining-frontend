@@ -95,12 +95,7 @@ export default {
         },
         $route: {
             handler(val) {
-                console.log('val', val)
-                require(['skrollr'], function (skrollr) {
-                    console.log('skrollr', skrollr)
-                    skrollr.init();
-                    skrollr.refresh();
-                });
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
             },
             deep: true
         },

@@ -90,6 +90,9 @@ export default {
                 color: #FFFFFF;
             }
 
+            p {
+                animation: tranTop 1s ease-in-out;
+            }
         }
 
         ._operation-list {

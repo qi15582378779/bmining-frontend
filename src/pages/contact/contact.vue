@@ -61,6 +61,10 @@ export default {
                 line-height: 28px;
                 color: #FFFFFF;
             }
+
+            p {
+                animation: tranTop 1s ease-in-out;
+            }
         }
 
         ._contact-form {

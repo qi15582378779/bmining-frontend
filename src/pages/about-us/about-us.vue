@@ -7,26 +7,31 @@
             </div>
         </div>
 
-        <div class="_about-all">
+        <div class="_about-all" :class="{'_active-all': activeAllFlag}">
             <h3>
                 <span>ALL</span>
                 IN ONE - <span>ALL</span> IN BMINING</h3>
 
             <ul class="_all-list">
-                <li v-for="(el, index) of allList" :key="index"
-                    :class="{'_an-top': upFlag}">
+                <li v-for="(el, index) of allList" :key="index">
                     <img :src="el.img" alt="">
                     <p>{{el.name}}</p>
                 </li>
             </ul>
         </div>
 
-        <div class="_container _lead">
+        <div class="_container _lead" :class="{'_active-lead': activeListFlag}">
             <div class="_lead-title">Digital Asset Mining Leaders</div>
             <ul class="_lead-list">
                 <li v-for="(el, index) of leadersList" :key="index">
                     <p>{{el.title}}</p>
-                    <img :src="el.url" alt="">
+                    <div class="_hover-be">
+                        <img :src="el.url" alt="">
+                    </div>
+                    <div class="_hover-af">
+                        <p>{{el.msg}}</p>
+                        <img src="../../assets/images/bor.svg" alt="">
+                    </div>
                 </li>
             </ul>
         </div>
@@ -58,24 +63,26 @@ export default {
                 {
                     title: 'Stable,cost-effcient and clean energy',
                     url: require('../../assets/images/about-us/lead-1.svg'),
+                    msg: 'The well-connected management team is equipped with deep industry know-how and rich experience, and is capable of driving insightful and innovative changes.'
                 },
                 {
                     title: 'Partnership with the world’s primer miners',
                     url: require('../../assets/images/about-us/lead-2.svg'),
+                    msg: 'Bmining has partnered with top suppliers of the industry, enjoying the guaranteed and priority access to the industry’s most advanced miners. Thereby, Bmining has minimized supply constraints and created unique barrier to entry. Bmining is also able to leverage the relatively stable price to hedge crypto market volatility.'
                 },
                 {
                     title: 'Experienced management team extensive network',
                     url: require('../../assets/images/about-us/lead-3.svg'),
+                    msg: 'The well-connected management team is equipped with deep industry know-how and rich experience, and is capable of driving insightful and innovative changes.'
                 },
                 {
                     title: 'World-class technology crew',
                     url: require('../../assets/images/about-us/lead-4.svg'),
+                    msg: 'The well-connected management team is equipped with deep industry know-how and rich experience, and is capable of driving insightful and innovative changes.'
                 }
             ],
-            tranY1: 100,
-            aphy: 0,
-            topFlag: false,
-            upFlag: false
+            activeAllFlag: false,
+            activeListFlag: false
         }
     },
     computed: {
@@ -87,13 +94,13 @@ export default {
     watch: {
         scrollTop: {
             handler(val) {
-                if (this.direction === 'down' && val > 200) {
-                    this.topFlag = true;
-                    this.upFlag = true;
 
+                console.log(window.innerHeight)
+                if (this.direction === 'down' && val > 350) {
+                    this.activeAllFlag = true;
                 }
-                if (this.direction === 'up' && val>100) {
-                    this.upFlag = true;
+                if (this.direction === 'down' && val > window.innerHeight / 2) {
+                    this.activeListFlag = true
                 }
             },
             deep: true
@@ -135,7 +142,7 @@ export default {
                 line-height: 50px;
                 text-shadow: 4px 3px 4px rgba(192, 243, 106, 0.2);
                 text-align: center;
-                animation: tranTop 1.5s ease-in-out;
+                animation: tranTop 1s ease-in-out;
             }
         }
 
@@ -152,9 +159,7 @@ export default {
                 letter-spacing: 0.1em;
                 margin-bottom: 68px;
                 transition: opacity .6s ease;
-                transition-delay: .3s;
-                /*opacity: 0;*/
-
+                opacity: 0;
 
                 span:nth-of-type(1) {
                     color: #345FFA;
@@ -166,12 +171,6 @@ export default {
             }
         }
 
-        ._an-top {
-            /*animation: tranTop 2s ease-in-out;*/
-            /*animation-fill-mode: forwards;*/
-            opacity: 1 !important;
-        }
-
         ._all-list {
             display: flex;
             justify-content: center;
@@ -180,15 +179,6 @@ export default {
                 text-align: center;
                 transition: opacity .6s ease;
                 opacity: 0;
-                &:nth-of-type(1) {
-                    transition-delay: .3s;
-                }
-                &:nth-of-type(2) {
-                    transition-delay: .4s;
-                }
-                &:nth-of-type(3) {
-                    transition-delay: .5s;
-                }
 
                 img {
                     width: 89px;
@@ -207,6 +197,29 @@ export default {
             }
         }
 
+        ._active-all {
+            h3 {
+                opacity: 1;
+                transition-delay: .0s;
+            }
+
+            ._all-list li {
+                opacity: 1;
+
+                &:nth-of-type(1) {
+                    transition-delay: .1s;
+                }
+
+                &:nth-of-type(2) {
+                    transition-delay: .2s;
+                }
+
+                &:nth-of-type(3) {
+                    transition-delay: .3s;
+                }
+            }
+        }
+
         ._lead {
             padding: 52px 0;
         }
@@ -218,6 +231,9 @@ export default {
             letter-spacing: 0.1em;
             color: #9BC456;
             margin-bottom: 56px;
+            transform: translate(20px, 20px);
+            opacity: 0;
+            transition: all .5s ease;
         }
 
         ._lead-list {
@@ -235,13 +251,90 @@ export default {
                 text-align: center;
                 padding: 24px 28px;
                 color: #B2B2B2;
+                position: relative;
+                transform: translate(20px, 20px);
+                opacity: 0;
+                transition: all .6s ease;
 
                 p {
                     text-align: left;
                 }
 
-                img {
-                    margin-top: 32px;
+                ._hover-be, ._hover-af {
+                    transition: all .5s ease;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 100%;
+                    height: 100%;
+                    transform: translate(-50%, -50%);
+                }
+
+                ._hover-be {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        margin-top: 40px;
+                    }
+                }
+
+                ._hover-af {
+                    transform: translate(-50%, -50%) scale(0);
+                    opacity: 0;
+                    text-align: left;
+                    padding: 74px 28px 0;
+                    font-size: 14px;
+                    line-height: 24px;
+                    color: #8D8D8D;
+
+                    img {
+                        margin-top: 12px;
+                    }
+                }
+
+                &:hover {
+                    ._hover-be {
+                        transform: translate(-50%, -50%) scale(0);
+                        opacity: 0;
+                    }
+
+                    ._hover-af {
+                        transform: translate(-50%, -50%) scale(1);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        ._active-lead {
+            ._lead-title {
+                transform: translate(0, 0);
+                opacity: 1;
+                transition-delay: 0s;
+            }
+
+            ._lead-list {
+                li {
+                    transform: translate(0, 0);
+                    opacity: 1;
+
+                    &:nth-of-type(1) {
+                        transition-delay: .1s;
+                    }
+
+                    &:nth-of-type(2) {
+                        transition-delay: .2s;
+                    }
+
+                    &:nth-of-type(3) {
+                        transition-delay: .3s;
+                    }
+
+                    &:nth-of-type(4) {
+                        transition-delay: .4s;
+                    }
                 }
             }
         }
