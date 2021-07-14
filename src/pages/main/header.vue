@@ -94,7 +94,7 @@ export default {
             deep: true
         },
         $route: {
-            handler(val) {
+            handler() {
                 document.body.scrollTop = document.documentElement.scrollTop = 0;
             },
             deep: true

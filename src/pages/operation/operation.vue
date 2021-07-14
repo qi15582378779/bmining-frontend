@@ -7,7 +7,7 @@
             </div>
         </div>
 
-        <ul class="_operation-list">
+        <ul class="_operation-list" :class="{'_active-list': activeListFlag}">
             <li v-for="(el, index) of txtList" :key="index">
                 <img :src="el.imgUrl" alt="" v-if="el.isShow">
                 <div v-if="!el.isShow">
@@ -52,8 +52,14 @@ export default {
                     title: 'Mine',
                     txt: 'we’re strategically positioned to remain at the forefront of the cryptocurrency mining market.'
                 },
-            ]
+            ],
+            activeListFlag: false
         }
+    },
+    mounted() {
+        setTimeout(() => {
+            this.activeListFlag = true
+        }, 100)
     }
 }
 </script>
@@ -105,6 +111,9 @@ export default {
                 height: 456px;
                 display: flex;
                 align-items: center;
+                opacity: 0;
+                transform: translate(20px, 20px);
+                transition: all .6s ease;
 
                 img {
                     width: 100%;
@@ -151,6 +160,37 @@ export default {
                             }
                         }
                     }
+                }
+            }
+        }
+
+        ._active-list {
+            li {
+                transform: translate(0, 0);
+                opacity: 1;
+
+                &:nth-of-type(1) {
+                    transition-delay: 0s;
+                }
+
+                &:nth-of-type(2) {
+                    transition-delay: .1s;
+                }
+
+                &:nth-of-type(3) {
+                    transition-delay: .2s;
+                }
+
+                &:nth-of-type(4) {
+                    transition-delay: .3s;
+                }
+
+                &:nth-of-type(5) {
+                    transition-delay: .4s;
+                }
+
+                &:nth-of-type(6) {
+                    transition-delay: .5s;
                 }
             }
         }

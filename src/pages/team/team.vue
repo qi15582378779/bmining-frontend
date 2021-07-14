@@ -71,7 +71,7 @@ export default {
     mounted() {
         setTimeout(() => {
             this.active = true;
-        }, 10)
+        }, 100)
     }
 }
 </script>
