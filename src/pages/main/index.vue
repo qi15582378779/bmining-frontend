@@ -1,16 +1,18 @@
 <template>
     <div class="_main">
         <HeaderCom/>
-        <router-view />
+        <router-view/>
+        <FooterCom/>
     </div>
 </template>
 
 <script>
 import HeaderCom from './header';
+import FooterCom from './footer'
 
 export default {
     name: 'index',
-    components: {HeaderCom},
+    components: {HeaderCom, FooterCom},
     data() {
         return {
             email: null,

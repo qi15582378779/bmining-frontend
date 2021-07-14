@@ -1,6 +1,6 @@
 <template>
     <div class="_about-us">
-        <div class="_about-bg">
+        <div class="_about-bg" :style="{'height': bgHeight}">
             <div @click="test">
                 <p>One of world-leading</p>
                 <p>crypto currency mining company</p>
@@ -82,7 +82,8 @@ export default {
                 }
             ],
             activeAllFlag: false,
-            activeListFlag: false
+            activeListFlag: false,
+            bgHeight: window.innerHeight + 'px'
         }
     },
     computed: {
@@ -120,11 +121,11 @@ export default {
 <style scoped lang="scss">
     ._about-us {
         width: 100%;
-        height: 100%;
+
 
         ._about-bg {
             width: 100%;
-            height: 100%;
+
             background-image: url("../../assets/images/about-us/about_us-bg.png");
             background-repeat: no-repeat;
             background-position: 100% 100%;

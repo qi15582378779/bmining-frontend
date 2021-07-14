@@ -2,13 +2,15 @@
     <div class="_footer">
         <div class="_footer-container">
             <div>
-                ©️2021 Switch. All rights reserved.
+                ©️2021 Blue Ridge Mining Group Corp.
             </div>
             <div>
                 <template v-for="(el, index) in linkList">
-                    <a :href="el.url" :key="index" target="_blank">
-                        <i class="iconfont" v-html="el.name"></i>
-                    </a>
+                    <router-link
+                        :to="el.url"
+                        :key="index"
+                        :active-class="'_active'">{{el.name}}
+                    </router-link>
                 </template>
             </div>
         </div>
@@ -22,20 +24,20 @@ export default {
         return {
             linkList: [
                 {
-                    name: '&#xe619;',
-                    url: ''
+                    name: 'ABOUT US',
+                    url: '/about-us'
                 },
                 {
-                    name: '&#xe61c;',
-                    url: ''
+                    name: 'OPERAITION',
+                    url: '/operation'
                 },
                 {
-                    name: '&#xe61b;',
-                    url: ''
+                    name: 'TEAM',
+                    url: '/team'
                 },
                 {
-                    name: '&#xe61a;',
-                    url: ''
+                    name: 'CONTACT',
+                    url: '/contact'
                 }
             ]
         }

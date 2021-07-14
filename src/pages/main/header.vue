@@ -7,7 +7,12 @@
             <div>
                 <i class="iconfont" v-html="isOpen ? '&#xe61f;' : '&#xe61e;'"
                     @click="openClick"></i>
-                <img class="_header-logo" src="../../assets/images/logo/logo.svg" alt="">
+                <img class="_header-logo _logo-light" src="../../assets/images/logo/logo-light.svg"
+                    alt=""
+                    data-0="opacity: 1" data-300="opacity: 0">
+                <img class="_header-logo _logo-dark" src="../../assets/images/logo/logo-dark.svg"
+                    alt=""
+                    data-0="opacity: 0" data-300="opacity: 1">
             </div>
         </div>
 
@@ -133,12 +138,23 @@ export default {
             align-items: center;
             height: 100%;
 
+            & > div {
+                display: flex;
+                align-items: center;
+                position: relative;
+                height: 44px;
+            }
+
             i {
                 display: none;
             }
 
             img {
                 height: 44px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: all .2s ease;
             }
 
             ._h5-app {
