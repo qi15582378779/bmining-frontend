@@ -150,6 +150,7 @@ export default {
         ._about-all {
             color: #ffffff;
             padding: 52px 0;
+            background-color: #1A2229;
 
             h3 {
                 width: 100%;
@@ -296,6 +297,7 @@ export default {
                 }
 
                 &:hover {
+                    background-color: #32393F;
                     ._hover-be {
                         transform: translate(-50%, -50%) scale(0);
                         opacity: 0;

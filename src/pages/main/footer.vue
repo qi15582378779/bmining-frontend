@@ -1,10 +1,7 @@
 <template>
     <div class="_footer">
-        <div class="_footer-container">
-            <div>
-                ©️2021 Blue Ridge Mining Group Corp.
-            </div>
-            <div>
+        <div class="_container">
+            <div class="_footer-left">
                 <template v-for="(el, index) in linkList">
                     <router-link
                         :to="el.url"
@@ -12,6 +9,10 @@
                         :active-class="'_active'">{{el.name}}
                     </router-link>
                 </template>
+                <p>©️2021 Blue Ridge Mining Group Corp.</p>
+            </div>
+            <div class="_footer-right">
+                <img src="../../assets/images/logo/logo-light.svg" alt="">
             </div>
         </div>
     </div>
@@ -48,49 +49,42 @@ export default {
 <style lang="scss" scoped>
     ._footer {
         width: 100%;
-        height: 75px;
+        height: 238px;
         display: flex;
         justify-content: center;
-        margin-top: -75px;
-        position: relative;
-        z-index: 99;
+        background-color: #000000;
 
-        ._footer-container {
-            width: 1280px;
-            height: 100%;
-            border-top: 1px solid #E0E5FF;
+        ._container {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+        }
 
-            div {
-                display: flex;
-                align-items: center;
+        ._footer-left {
+            a {
+                color: #FFFFFF;
+                font-size: 16px;
+                margin-right: 50px;
+                transition: all .3s ease;
 
-                &:nth-of-type(1) {
-                    font-size: 16px;
-                    color: #292C2F;
+                &:nth-last-of-type(1) {
+                    margin-right: 0;
                 }
 
-                &:nth-of-type(2) {
-                    a {
-                        display: flex;
-                        margin-right: 32px;
-                        transition: all .2s;
-                        color: var(--col-main);
-
-                        &:hover {
-                            margin-top: -4px;
-                        }
-
-                        i {
-                            font-size: 24px;
-                        }
-
-                        &:nth-last-of-type(1) {
-                            margin-right: 0;
-                        }
-                    }
+                &:hover {
+                    color: #9BC456;
                 }
+            }
+
+            ._active {
+                color: #9BC456;
+                font-weight: 500;
+            }
+
+            p {
+                font-size: 12px;
+                color: #7D7F8C;
+                margin-top: 24px;
             }
         }
     }
