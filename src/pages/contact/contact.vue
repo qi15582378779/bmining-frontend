@@ -22,6 +22,41 @@
                 <div class="_form-title">
                     Have a question? We’d love to hear from you.
                 </div>
+
+                <div class="_form-box">
+                    <div class="_form-input">
+                        <p>First Name</p>
+                        <el-input v-model="first_name" placeholder="请输入内容"></el-input>
+                    </div>
+
+                    <div class="_form-input">
+                        <p>Last Name</p>
+                        <el-input v-model="last_name" placeholder="请输入内容"></el-input>
+                    </div>
+
+                    <div class="_form-input">
+                        <p>Email</p>
+                        <el-input v-model="email" placeholder="请输入内容"></el-input>
+                    </div>
+
+                    <div class="_form-input">
+                        <p>Phone</p>
+                        <el-input v-model="phone" placeholder="请输入内容"></el-input>
+                    </div>
+
+                    <div class="_form-textarea">
+                        <p>Message</p>
+                        <el-input
+                            type="textarea"
+                            placeholder="请输入内容"
+                            v-model="message">
+                        </el-input>
+                    </div>
+                </div>
+
+                <div class="_form-btn">
+                    <el-button>Send</el-button>
+                </div>
             </div>
         </div>
     </div>
@@ -29,7 +64,16 @@
 
 <script>
 export default {
-    name: 'contact'
+    name: 'contact',
+    data() {
+        return {
+            first_name: null,
+            last_name: null,
+            email: null,
+            phone: null,
+            message: null
+        }
+    }
 }
 </script>
 
@@ -73,7 +117,7 @@ export default {
             display: flex;
             justify-content: space-between;
 
-            &>div {
+            & > div {
                 width: 50%;
             }
 
@@ -123,6 +167,46 @@ export default {
             font-size: 24px;
             line-height: 24px;
             color: #8D8D8D;
+            margin-bottom: 50px;
+        }
+
+        ._form-box {
+            display: flex;
+            flex-wrap: wrap;
+
+            ._form-input {
+                margin-bottom: 50px;
+
+                &:nth-of-type(odd) {
+                    padding-right: 33px;
+                }
+
+                &:nth-of-type(even) {
+                    padding-left: 33px;
+                }
+            }
+        }
+
+        ._form-btn {
+            margin-top: 35px;
+            display: flex;
+            justify-content: flex-end;
+
+            button {
+                width: 227px;
+                height: 55px;
+                color: #ffffff;
+                font-size: 16px;
+                background: #323A42;
+                border: 1px solid #6B7783;
+                border-radius: 0;
+                transition: all .3s ease;
+
+                &:hover {
+                    background: #A4CC62;
+                    border-color: #A4CC62;
+                }
+            }
         }
     }
 </style>

@@ -1,140 +1,53 @@
-// main
-.el-dialog__headerbtn {
-    height: 20px;
-    font-size: 20px !important;
-    top: 26px !important;
+// contact input
 
-    i {
-        color: #292C2F !important;
-        transition: all .2s;
+._form-input {
+    width: 50%;
 
-        &:hover {
-            color: var(--col-main) !important;
+    p {
+        font-size: 16px;
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 100%;
+        height: 55px;
+        background: #3E4750;
+        border: 1px solid #6B7783;
+        box-sizing: border-box;
+        font-size: 14px;
+        color: #A3A0A0;
+        border-radius: 0;
+
+        &:hover, &:focus {
+            border-color: rgba(155, 196, 86, 0.5);
+            box-shadow: 4px 2px 6px rgba(62, 71, 80, 0.89);
         }
     }
 }
 
-._main-email-modal {
-    .el-dialog {
-        border-radius: 24px;
+._form-textarea {
+    width: 100%;
+
+    p {
+        font-size: 16px;
+        color: #ffffff;
+        margin-bottom: 20px;
     }
 
-    .el-dialog__header {
-        padding: 0;
-    }
+    textarea {
+        background: #323A42;
+        border: 1px solid #6B7783;
+        box-sizing: border-box;
+        font-size: 14px;
+        color: #A3A0A0;
+        border-radius: 0;
+        height: 144px !important;
+        resize: none;
 
-    .el-dialog__body {
-        padding: 0;
-    }
-
-    ._head-logo {
-        height: 88px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-bottom: 1px solid #F1F1F1;
-
-        img {
-            height: 44px;
-        }
-    }
-
-    ._email-content {
-        padding: 55px 60px 75px;
-
-        p {
-            font-size: 26px;
-            line-height: 26px;
-            color: #000000;
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        ._email-input {
-            display: block;
-            margin-bottom: 44px;
-            width: 100%;
-            height: 54px;
-            border: 2px solid #292C2F;
-            border-radius: 8px;
-            font-size: 18px;
-            color: #292C2F;
-            padding: 0 20px;
-
-            &::placeholder {
-                color: rgba(#292C2F, .6);
-            }
-
-            &:hover, &:focus, &:focus-visible {
-                border-color: var(--col-main);
-                border-radius: 8px;
-            }
-        }
-
-        .required:focus-visible input {
-            border: none;
-            border-radius: 8px;
-        }
-
-        ._email-btn {
-            width: 100%;
-            height: 54px;
-            background: var(--col-main);
-            border-radius: 8px;
-            color: #ffffff;
-            border: 0;
-            padding: 0;
-            margin: 0;
-            font-size: 18px;
-            font-weight: 400;
-            transition: all .2s;
-            cursor: pointer;
-
-            &:hover {
-                background: var(--col-hover);
-            }
-        }
-    }
-
-}
-
-@media (max-width: 768px) {
-    // main
-    ._main-email-modal {
-        .el-dialog {
-            border-radius: 12px;
-            width: 85% !important;
-        }
-
-        ._head-logo {
-            height: 66px;
-
-            img {
-                height: 22px;
-            }
-        }
-
-        ._email-content {
-            padding: 25px;
-
-            p {
-                font-size: 18px;
-                margin-bottom: 24px;
-            }
-
-            ._email-input {
-                height: 44px;
-                margin-bottom: 24px;
-
-                input {
-                    font-size: 14px;
-                }
-            }
-
-            ._email-btn {
-                height: 44px;
-                font-size: 14px;
-            }
+        &:hover, &:focus {
+            border-color: rgba(155, 196, 86, 0.5);
+            box-shadow: 4px 2px 6px rgba(62, 71, 80, 0.89);
         }
     }
 }
