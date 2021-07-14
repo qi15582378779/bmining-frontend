@@ -9,7 +9,7 @@
 
         <div class="_contact-form">
             <div class="_form-left">
-                <div>
+                <div :class="{'_active': activeFlag}">
                     <p>Get in Touch</p>
                     <p>Email – <a href="mailto:info@bmining.com">info@bmining.com</a></p>
                     <p>130 King Street West, Suite 1800
@@ -71,8 +71,18 @@ export default {
             last_name: null,
             email: null,
             phone: null,
-            message: null
+            message: null,
+            timer: null,
+            activeFlag: false
         }
+    },
+    mounted() {
+        this.timer = setTimeout(() => {
+            this.activeFlag = true;
+        }, 100)
+    },
+    destroyed() {
+        clearTimeout(this.timer)
     }
 }
 </script>
@@ -124,10 +134,18 @@ export default {
             ._form-left {
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-end;
+
+                & > div {
+                    width: 600px;
+                    padding-right: 200px;
+                }
 
                 p {
                     margin-bottom: 24px;
+                    opacity: 0;
+                    transform: translateY(-20px);
+                    transition: all .6s ease;
 
                     &:nth-of-type(1) {
                         font-weight: 500;
@@ -152,6 +170,25 @@ export default {
                         line-height: 24px;
                         color: #8D8D8D;
                         margin-bottom: 0;
+                    }
+                }
+
+                ._active {
+                    p {
+                        opacity: 1;
+                        transform: translateY(0);
+
+                        &:nth-of-type(1) {
+                            transition-delay: 0s;
+                        }
+
+                        &:nth-of-type(1) {
+                            transition-delay: .1s;
+                        }
+
+                        &:nth-of-type(1) {
+                            transition-delay: .2s;
+                        }
                     }
                 }
             }
