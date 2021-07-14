@@ -9,12 +9,12 @@
             </div>
         </div>
 
-        <div class="_container">
+        <div class="_container" :class="{'_active': active}">
             <div class="_team-title">
                 Meet Our Management Team
             </div>
             <ul class="_team-list">
-                <li v-for="(el, index) of teamList" :key="index" :class="{'_active': active}">
+                <li v-for="(el, index) of teamList" :key="index">
                     <div>
                         <div class="_img-con">
                             <img :src="el.imgUrl" alt="">
@@ -121,6 +121,8 @@ export default {
             line-height: 36px;
             color: #ffffff;
             margin-bottom: 45px;
+            opacity: 0;
+            transition: opacity .6s ease;
         }
 
         ._team-list {
@@ -171,38 +173,44 @@ export default {
                     }
                 }
             }
+        }
 
-            ._active {
-                &:nth-of-type(1) {
-                    transition-delay: .1s;
-                    opacity: 1;
-                }
+        ._active {
+            ._team-title {
+                opacity: 1;
+                transition-delay: 0s;
+            }
 
-                &:nth-of-type(2) {
-                    transition-delay: .2s;
+            ._team-list {
+                li {
                     opacity: 1;
-                }
 
-                &:nth-of-type(3) {
-                    opacity: 1;
-                    transition-delay: .3s;
-                }
+                    &:nth-of-type(1) {
+                        transition-delay: .1s;
+                    }
 
-                &:nth-of-type(4) {
-                    opacity: 1;
-                    transition-delay: .4s;
-                }
+                    &:nth-of-type(2) {
+                        transition-delay: .2s;
+                    }
 
-                &:nth-of-type(5) {
-                    opacity: 1;
-                    transition-delay: .5s;
-                }
+                    &:nth-of-type(3) {
+                        transition-delay: .3s;
+                    }
 
-                &:nth-of-type(6) {
-                    opacity: 1;
-                    transition-delay: .6s;
+                    &:nth-of-type(4) {
+                        transition-delay: .4s;
+                    }
+
+                    &:nth-of-type(5) {
+                        transition-delay: .5s;
+                    }
+
+                    &:nth-of-type(6) {
+                        transition-delay: .6s;
+                    }
                 }
             }
+
         }
     }
 </style>
