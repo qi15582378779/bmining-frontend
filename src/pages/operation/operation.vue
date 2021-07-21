@@ -118,6 +118,7 @@ export default {
                 opacity: 0;
                 transform: translate(20px, 20px);
                 transition: all .6s ease;
+                background-color: #1A2229;
 
                 img {
                     width: 100%;

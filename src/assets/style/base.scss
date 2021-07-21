@@ -21,25 +21,15 @@
 }
 
 @font-face {
-    font-family: 'Poppins';
-    src: url("../font/Poppins-Regular.otf");
-}
-
-@font-face {
-    font-family: 'sanLight';
-    src: url("../font/Open Sans Condensed Light.ttf");
-}
-
-@font-face {
-    font-family: 'sanBold';
-    src: url("../font/Open Sans Condensed Bold.ttf");
+    font-family: 'Roboto';
+    src: url("../font/Roboto-Regular.ttf");
 }
 
 
 html, body {
     width: 100%;
     height: auto !important;
-    font-family: Poppins;
+    font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     background-color: #171E25;
@@ -85,6 +75,15 @@ $top1: 100px;
     100% {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@media (max-width: 1200px) {
+    ._container {
+        width: 100%;
+        //padding: 0 44px;
+        padding-left: 44px !important;
+        padding-right: 44px !important;
     }
 }
 

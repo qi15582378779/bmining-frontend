@@ -150,7 +150,7 @@ export default {
             }
 
             img {
-                height: 44px;
+                height: 45px;
                 position: absolute;
                 top: 0;
                 left: 0;

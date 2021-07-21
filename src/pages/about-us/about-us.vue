@@ -14,7 +14,10 @@
 
             <ul class="_all-list">
                 <li v-for="(el, index) of allList" :key="index">
-                    <img :src="el.img" alt="">
+                    <div>
+                        <img :src="el.img" alt="">
+                        <img :src="el.imgHover" alt="">
+                    </div>
                     <p>{{el.name}}</p>
                 </li>
             </ul>
@@ -24,7 +27,7 @@
             <div class="_lead-title">Digital Asset Mining Leaders</div>
             <ul class="_lead-list">
                 <li v-for="(el, index) of leadersList" :key="index">
-                    <p>{{el.title}}</p>
+                    <p class="_list-title">{{el.title}}</p>
                     <div class="_hover-be">
                         <img :src="el.url" alt="">
                     </div>
@@ -48,14 +51,17 @@ export default {
             allList: [
                 {
                     img: require('../../assets/images/about-us/all-1.svg'),
+                    imgHover: require('../../assets/images/about-us/all-1-hover.svg'),
                     name: 'Mining'
                 },
                 {
                     img: require('../../assets/images/about-us/all-2.svg'),
+                    imgHover: require('../../assets/images/about-us/all-2-hover.svg'),
                     name: 'Mine hosting service'
                 },
                 {
                     img: require('../../assets/images/about-us/all-3.svg'),
+                    imgHover: require('../../assets/images/about-us/all-3-hover.svg'),
                     name: 'Mine'
                 }
             ],
@@ -122,7 +128,6 @@ export default {
     ._about-us {
         width: 100%;
 
-
         ._about-bg {
             width: 100%;
 
@@ -182,19 +187,57 @@ export default {
                 transition: opacity .6s ease;
                 opacity: 0;
 
-                img {
-                    width: 89px;
+                & > div {
+                    width: 116px;
+                    height: 126px;
+                    position: relative;
                     margin-bottom: 26px;
+                    display: inline-block;
+
+                    img {
+                        position: absolute;
+                        width: 100%;
+                        top: 0;
+                        left: 0;
+                        transition: opacity .2s ease;
+
+                        &:nth-of-type(1) {
+                            opacity: 1;
+                        }
+
+                        &:nth-of-type(2) {
+                            opacity: 0;
+                        }
+                    }
+
                 }
+
 
                 p {
                     font-size: 28px;
                     line-height: 28px;
                     color: #ffffff;
+                    transition: color .2s ease;
                 }
 
                 &:nth-of-type(2) {
                     margin: 0 190px;
+                }
+
+                &:hover {
+                    & > div img {
+                        &:nth-of-type(1) {
+                            opacity: 0;
+                        }
+
+                        &:nth-of-type(2) {
+                            opacity: 1;
+                        }
+                    }
+
+                    p {
+                        color: #9BC456;
+                    }
                 }
             }
         }
@@ -258,18 +301,18 @@ export default {
                 opacity: 0;
                 transition: all .6s ease;
 
-                p {
+                ._list-title {
                     text-align: left;
+                    font-size: 24px;
                 }
 
                 ._hover-be, ._hover-af {
                     transition: all .5s ease;
                     position: absolute;
-                    top: 50%;
                     left: 50%;
                     width: 100%;
-                    height: 100%;
-                    transform: translate(-50%, -50%);
+                    /*height: 100%;*/
+                    transform: translateX(-50%);
                 }
 
                 ._hover-be {
@@ -283,10 +326,10 @@ export default {
                 }
 
                 ._hover-af {
-                    transform: translate(-50%, -50%) scale(0);
+                    transform: translateX(-50%) scale(0);
                     opacity: 0;
                     text-align: left;
-                    padding: 74px 28px 0;
+                    padding: 26px 28px 0;
                     font-size: 14px;
                     line-height: 24px;
                     color: #8D8D8D;
@@ -294,17 +337,22 @@ export default {
                     img {
                         margin-top: 12px;
                     }
+
+                    p {
+                        font-size: 14px;
+                    }
                 }
 
                 &:hover {
                     background-color: #32393F;
+
                     ._hover-be {
-                        transform: translate(-50%, -50%) scale(0);
+                        transform: translateX(-50%) scale(0);
                         opacity: 0;
                     }
 
                     ._hover-af {
-                        transform: translate(-50%, -50%) scale(1);
+                        transform: translateX(-50%) scale(1);
                         opacity: 1;
                     }
                 }
@@ -339,6 +387,26 @@ export default {
                         transition-delay: .4s;
                     }
                 }
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        ._about-us {
+            ._about-all {
+
+            }
+
+            ._all-list {
+                li {
+                    &:nth-of-type(2) {
+                        margin: 0 15%;
+                    }
+                }
+            }
+
+            ._lead-list {
+                justify-content: center;
             }
         }
     }
