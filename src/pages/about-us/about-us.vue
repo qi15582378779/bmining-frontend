@@ -1,7 +1,7 @@
 <template>
     <div class="_about-us">
         <div class="_about-bg" :style="{'height': bgHeight}">
-            <div @click="test">
+            <div>
                 <p>One of world-leading</p>
                 <p>crypto currency mining company</p>
             </div>
@@ -103,7 +103,6 @@ export default {
     watch: {
         scrollTop: {
             handler(val) {
-                console.log(window.innerHeight)
                 if (window.innerWidth > 768) {
                     if (this.direction === 'down' && val > 350) {
                         this.activeAllFlag = true;
@@ -124,11 +123,6 @@ export default {
             this.time2 = setTimeout(() => {
                 this.activeListFlag = true
             }, 1000);
-        }
-    },
-    methods: {
-        test() {
-            console.log('this.scrollTops', this.scrollTop)
         }
     },
     destroyed() {

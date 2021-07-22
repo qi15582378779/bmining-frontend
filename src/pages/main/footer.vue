@@ -91,29 +91,44 @@ export default {
 
     @media (max-width: 768px) {
         ._footer {
-            padding: 0 19px;
+            padding: 0 11px;
+            position: relative;
+            height: 200px;
 
-            ._footer-container {
+            ._container {
+                padding: 0 !important;
+                align-items: flex-start;
+            }
+
+            ._footer-left {
                 width: 100%;
-                justify-content: space-around;
-                /*flex-flow: row-reverse ;*/
+                display: flex;
+                justify-content: space-between;
                 flex-wrap: wrap;
+                margin-top: 110px;
 
-                & > div {
+                a {
+                    display: flex;
+                    font-size: 14px;
+                    margin: 0;
+                }
+
+                p {
                     width: 100%;
-                    justify-content: center;
+                    text-align: center;
+                }
+            }
 
-                    &:nth-of-type(1) {
-                        font-size: 12px;
-                    }
+            ._footer-right {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                padding-top: 12px;
 
-                    &:nth-of-type(2) {
-                        a {
-                            i {
-                                font-size: 18px;
-                            }
-                        }
-                    }
+                img {
+                    height: 47px;
                 }
             }
         }
