@@ -91,9 +91,9 @@ export default {
     ._contact {
         ._contact-bg {
             width: 100%;
-            height: 580px;
+            height: 460px;
             background-image: url("../../assets/images/contact/contact-bg.png");
-            background-position: 100% 100%;
+            background-position: center;
             background-size: 100% 100%;
             background-repeat: no-repeat;
             display: flex;

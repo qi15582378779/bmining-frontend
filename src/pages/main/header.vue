@@ -327,6 +327,7 @@ export default {
                                     color: #345FFA !important;
                                     background: #E9E9E9;
                                     border-bottom-color: #E9E9E9;
+                                    font-weight: bold;
 
                                     ._bor-img {
                                         display: none;

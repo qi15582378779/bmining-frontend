@@ -9,7 +9,7 @@
             </div>
         </div>
 
-        <div class="_container" :class="{'_active': active}">
+        <div :class="{'_active': active}">
             <div class="_team-title">
                 Meet Our Management Team
             </div>
@@ -36,33 +36,53 @@ export default {
             teamList: [
                 {
                     imgUrl: require('../../assets/images/team/team-1.png'),
-                    name: 'Tyler Page',
-                    post: 'CFO'
+                    name: 'Haiqing Wang',
+                    post: 'CEO & CFO'
                 },
                 {
                     imgUrl: require('../../assets/images/team/team-2.png'),
-                    name: 'Ed Farrell',
-                    post: 'CEO'
-                },
-                {
-                    imgUrl: require('../../assets/images/team/team-3.png'),
-                    name: 'Patrick Kelly',
+                    name: 'Jialin Qu',
                     post: 'COO'
                 },
                 {
+                    imgUrl: require('../../assets/images/team/team-3.png'),
+                    name: 'Y. Tristan Kuo',
+                    post: 'Independent Director/AC Chairman'
+                },
+                {
                     imgUrl: require('../../assets/images/team/team-4.png'),
-                    name: 'Samy Biyadi',
-                    post: 'Head of Power'
+                    name: 'Rahim Noorani',
+                    post: 'Independent Director'
                 },
                 {
                     imgUrl: require('../../assets/images/team/team-5.png'),
-                    name: 'Jaime Leverton',
-                    post: 'General Counsel'
+                    name: 'Jor Law',
+                    post: 'Independent Director'
                 },
                 {
                     imgUrl: require('../../assets/images/team/team-6.png'),
-                    name: 'Jason Zaluski',
-                    post: 'Head of Technology'
+                    name: 'Scott J Wade',
+                    post: 'Head of Operations'
+                },
+                {
+                    imgUrl: require('../../assets/images/team/team-7.png'),
+                    name: 'Josh Neuroth',
+                    post: 'Advisor'
+                },
+                {
+                    imgUrl: require('../../assets/images/team/team-8.png'),
+                    name: 'Nima',
+                    post: 'Advisor'
+                },
+                {
+                    imgUrl: require('../../assets/images/team/team-8.png'),
+                    name: 'Larry',
+                    post: 'Advisor'
+                },
+                {
+                    imgUrl: require('../../assets/images/team/team-10.png'),
+                    name: 'Kenneth',
+                    post: 'Advisor'
                 }
             ],
             active: false,
@@ -124,7 +144,7 @@ export default {
             font-size: 36px;
             line-height: 36px;
             color: #ffffff;
-            margin-bottom: 45px;
+            margin-bottom: 132px;
             opacity: 0;
             transition: opacity .6s ease;
         }
@@ -133,23 +153,28 @@ export default {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            padding: 0 55px;
+            max-width: 1550px;
+            margin: 0 auto;
 
             li {
                 display: flex;
                 align-items: center;
                 flex-wrap: wrap;
                 width: 352px;
-                margin-bottom: 48px;
+                margin-bottom: 82px;
                 opacity: 0;
                 transition: opacity .6s ease;
 
                 ._img-con {
                     width: 352px;
+                    height: 352px;
                     overflow: hidden;
                     margin-bottom: 18px;
                 }
 
                 img {
+                    width: 100%;
                     transition: all .3s ease-in-out;
                     cursor: pointer;
 
@@ -177,10 +202,29 @@ export default {
                     }
                 }
 
-                &:hover {
+                & > div:hover {
                     p {
                         color: #9BC456;
                     }
+                }
+
+                &:nth-of-type(1), &:nth-of-type(2) {
+                    width: 50%;
+                    display: flex;
+
+                    ._img-con {
+                        width: 352px;
+                        height: 420px;
+                    }
+                }
+
+                &:nth-of-type(1) {
+                    justify-content: flex-end;
+                    padding-right: 5%;
+                }
+
+                &:nth-of-type(2) {
+                    padding-left: 5%;
                 }
             }
         }
@@ -217,6 +261,22 @@ export default {
 
                     &:nth-of-type(6) {
                         transition-delay: .6s;
+                    }
+
+                    &:nth-of-type(7) {
+                        transition-delay: .7s;
+                    }
+
+                    &:nth-of-type(8) {
+                        transition-delay: .8s;
+                    }
+
+                    &:nth-of-type(9) {
+                        transition-delay: .9s;
+                    }
+
+                    &:nth-of-type(10) {
+                        transition-delay: 1s;
                     }
                 }
             }
@@ -270,9 +330,20 @@ export default {
 
                     ._img-con {
                         width: 100%;
+                        height: 258px;
                         margin-bottom: 14px;
 
                         img {
+                            width: 258px;
+                            height: 258px;
+                        }
+                    }
+
+                    &:nth-of-type(1), &:nth-of-type(2) {
+                        width: 258px;
+                        padding: 0;
+
+                        ._img-con {
                             width: 258px;
                             height: 258px;
                         }
