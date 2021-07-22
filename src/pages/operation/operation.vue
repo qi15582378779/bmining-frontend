@@ -8,13 +8,24 @@
         </div>
 
         <ul class="_operation-list" :class="{'_active-list': activeListFlag}">
-            <li v-for="(el, index) of txtList" :key="index">
-                <img :src="el.imgUrl" alt="" v-if="el.isShow">
-                <div v-if="!el.isShow">
-                    <p>{{el.title}}</p>
-                    <p v-html="el.txt"></p>
-                </div>
-            </li>
+            <template v-if="appFlag">
+                <li v-for="(el, index) of txtList" :key="index">
+                    <img :src="el.imgUrl" alt="" v-if="el.isShow">
+                    <div v-if="!el.isShow">
+                        <p>{{el.title}}</p>
+                        <p v-html="el.txt"></p>
+                    </div>
+                </li>
+            </template>
+            <template v-else>
+                <li v-for="(el, index) of appTxtList" :key="index">
+                    <img :src="el.imgUrl" alt="" v-if="el.isShow">
+                    <div v-if="!el.isShow">
+                        <p>{{el.title}}</p>
+                        <p v-html="el.txt"></p>
+                    </div>
+                </li>
+            </template>
         </ul>
     </div>
 </template>
@@ -53,8 +64,38 @@ export default {
                     txt: 'we’re strategically positioned to remain at the forefront of the cryptocurrency mining market.'
                 },
             ],
+            appTxtList: [
+                {
+                    imgUrl: require('../../assets/images/operation/operation-1.png'),
+                    isShow: true
+                },
+                {
+                    isShow: false,
+                    title: 'Mining',
+                    txt: '<span>38</span> BlockBox datacentres operating at a maximum capacity of <span>43 MW</span> producing <span>338 PH/s</span> at full load.'
+                },
+                {
+                    isShow: true,
+                    imgUrl: require('../../assets/images/operation/operation-2.png'),
+                },
+                {
+                    isShow: false,
+                    title: 'Mine hosting service',
+                    txt: 'Abundance of gas, wind, and green energy. <br> Ten-year electricity supply agreement and land lease.'
+                },
+                {
+                    isShow: true,
+                    imgUrl: require('../../assets/images/operation/operation-3.png'),
+                },
+                {
+                    isShow: false,
+                    title: 'Mine',
+                    txt: 'we’re strategically positioned to remain at the forefront of the cryptocurrency mining market.'
+                },
+            ],
             activeListFlag: false,
-            timer: null
+            timer: null,
+            appFlag: window.innerWidth > 768
         }
     },
     mounted() {
@@ -72,6 +113,7 @@ export default {
     ._operation {
         width: 100%;
         /*padding-bottom: 52px;*/
+        touch-action: pan-y;
 
         ._operation-bg {
             width: 100%;
@@ -196,6 +238,58 @@ export default {
 
                 &:nth-of-type(6) {
                     transition-delay: .5s;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        ._operation {
+            ._operation-bg {
+                height: 230px;
+
+                p {
+                    &:nth-of-type(1) {
+                        font-size: 26px;
+                        line-height: 26px;
+                    }
+
+                    &:nth-of-type(2) {
+                        font-size: 14px;
+                        line-height: 14px;
+                    }
+                }
+            }
+
+            ._operation-list {
+                flex-wrap: wrap;
+
+                li {
+                    width: 100%;
+                    height: auto;
+                    padding: 0 !important;
+
+                    img {
+                        height: 232px;
+                    }
+
+                    & > div {
+                        p {
+                            &:nth-of-type(1) {
+                                font-size: 26px;
+                                line-height: 26px;
+                            }
+
+                            &:nth-of-type(2) {
+                                font-size: 18px;
+                                line-height: 32px;
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(2n) {
+                        padding: 31px 24px !important;
+                    }
                 }
             }
         }
