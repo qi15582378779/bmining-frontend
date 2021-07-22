@@ -26,29 +26,29 @@
                 <div class="_form-box">
                     <div class="_form-input">
                         <p>First Name</p>
-                        <el-input v-model="first_name" placeholder="请输入内容"></el-input>
+                        <el-input v-model="first_name" placeholder=""></el-input>
                     </div>
 
                     <div class="_form-input">
                         <p>Last Name</p>
-                        <el-input v-model="last_name" placeholder="请输入内容"></el-input>
+                        <el-input v-model="last_name" placeholder=""></el-input>
                     </div>
 
                     <div class="_form-input">
                         <p>Email</p>
-                        <el-input v-model="email" placeholder="请输入内容"></el-input>
+                        <el-input v-model="email" placeholder=""></el-input>
                     </div>
 
                     <div class="_form-input">
                         <p>Phone</p>
-                        <el-input v-model="phone" placeholder="请输入内容"></el-input>
+                        <el-input v-model="phone" placeholder=""></el-input>
                     </div>
 
                     <div class="_form-textarea">
                         <p>Message</p>
                         <el-input
                             type="textarea"
-                            placeholder="请输入内容"
+                            placeholder=""
                             v-model="message">
                         </el-input>
                     </div>
@@ -242,6 +242,84 @@ export default {
                 &:hover {
                     background: #A4CC62;
                     border-color: #A4CC62;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        ._contact {
+            ._contact-bg {
+                height: 230px;
+
+                div {
+                    padding: 0 12px;
+                    width: 100%;
+                }
+
+                p:nth-of-type(1) {
+                    font-size: 26px;
+                    line-height: 26px;
+                }
+
+                p:nth-of-type(2) {
+                    font-size: 14px;
+                    line-height: 20px;
+                    width: 100%;
+                }
+            }
+
+            ._contact-form {
+                flex-wrap: wrap;
+                height: auto;
+
+                & > div {
+                    width: 100%;
+                }
+
+                ._form-left {
+                    justify-content: center;
+                    padding: 24px 0;
+
+                    & > div {
+                        padding-right: 0;
+                    }
+
+                    p {
+                        text-align: center;
+                        &:nth-of-type(3) {
+                            padding: 0 60px;
+                        }
+                    }
+                }
+
+                ._form-right {
+                    padding: 16px 28px;
+                }
+
+                ._form-title {
+                    font-size: 16px;
+                    line-height: 16px;
+                    margin-bottom: 40px;
+                }
+
+                ._form-box {
+                    ._form-input {
+                        margin-bottom: 24px;
+                        width: 100%;
+
+                        &:nth-of-type(odd) {
+                            padding-right: 0;
+                        }
+
+                        &:nth-of-type(even) {
+                            padding-left: 0;
+                        }
+                    }
+                }
+
+                ._form-btn {
+                    justify-content: center;
                 }
             }
         }
