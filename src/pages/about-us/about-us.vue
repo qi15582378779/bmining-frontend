@@ -501,7 +501,7 @@ export default {
 
                         &:nth-of-type(2) {
                             &:hover {
-                                height: 240px;
+                                height: 200px;
                             }
                         }
                     }

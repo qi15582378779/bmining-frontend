@@ -5,8 +5,9 @@
         data-300="background-color: rgba(255, 255, 255, 1);">
         <div class="_header-left">
             <div>
-                <img src="../../assets/images/menu.svg" alt="" class="_header-menu"
-                    @click="openClick">
+                <div class="_header-menu" @click="openClick">
+                    <img src="../../assets/images/menu.svg" alt="">
+                </div>
                 <img class="_header-logo _logo-light" src="../../assets/images/logo/logo-light.svg"
                     alt=""
                     data-0="opacity: 1" data-300="opacity: 0">
@@ -245,9 +246,15 @@ export default {
                     height: 100%;
 
                     ._header-menu {
-                        display: block;
+                        display: flex;
+                        align-items: center;
+                        height: 100%;
                         width: 24px;
                         margin-left: 11px;
+
+                        img {
+                            width: 100%;
+                        }
                     }
 
                     ._header-logo {
