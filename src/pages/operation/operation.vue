@@ -247,6 +247,8 @@ export default {
         ._operation {
             ._operation-bg {
                 height: 230px;
+                background-position: center;
+                background-size: auto 100%;
 
                 p {
                     &:nth-of-type(1) {

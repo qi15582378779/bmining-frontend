@@ -230,6 +230,8 @@ export default {
 
             ._team-bg {
                 height: 230px;
+                background-position: center;
+                background-size: auto 100%;
 
                 div {
                     padding: 0 12px;

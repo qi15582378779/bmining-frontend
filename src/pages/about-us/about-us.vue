@@ -425,6 +425,8 @@ export default {
         ._about-us {
             ._about-bg {
                 height: 310px !important;
+                background-position: center;
+                background-size: auto 100%;
 
                 p {
                     font-size: 24px;
