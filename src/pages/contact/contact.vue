@@ -138,6 +138,7 @@ export default {
 
                 & > div {
                     width: 600px;
+                    max-width: 100%;
                     padding-right: 200px;
                 }
 
