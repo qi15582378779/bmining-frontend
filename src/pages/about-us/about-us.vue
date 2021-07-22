@@ -89,7 +89,9 @@ export default {
             ],
             activeAllFlag: false,
             activeListFlag: false,
-            bgHeight: window.innerWidth < 768 ? 'auto' : window.innerHeight + 'px'
+            bgHeight: window.innerWidth < 768 ? 'auto' : window.innerHeight + 'px',
+            time1: null,
+            time2: null
         }
     },
     computed: {
@@ -102,23 +104,36 @@ export default {
         scrollTop: {
             handler(val) {
                 console.log(window.innerHeight)
-                if (this.direction === 'down' && val > 350) {
-                    this.activeAllFlag = true;
-                }
-                if (this.direction === 'down' && val > window.innerHeight / 2) {
-                    this.activeListFlag = true
+                if (window.innerWidth > 768) {
+                    if (this.direction === 'down' && val > 350) {
+                        this.activeAllFlag = true;
+                    }
+                    if (this.direction === 'down' && val > window.innerHeight / 2) {
+                        this.activeListFlag = true
+                    }
                 }
             },
             deep: true
         }
     },
     mounted() {
-
+        if (window.innerWidth < 768) {
+            this.time1 = setTimeout(() => {
+                this.activeAllFlag = true
+            }, 500);
+            this.time2 = setTimeout(() => {
+                this.activeListFlag = true
+            }, 1000);
+        }
     },
     methods: {
         test() {
             console.log('this.scrollTops', this.scrollTop)
         }
+    },
+    destroyed() {
+        clearTimeout(this.time1);
+        clearTimeout(this.time2);
     }
 }
 </script>
@@ -317,6 +332,9 @@ export default {
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    top: 0;
+                    height: 100%;
+                    transform: translateX(-50%);
 
                     img {
                         margin-top: 40px;
@@ -389,7 +407,7 @@ export default {
         }
     }
 
-    @media (max-width: 1200px) {
+    @media (min-width: 768px) and (max-width: 1200px) {
         ._about-us {
             ._about-all {
 
@@ -413,6 +431,85 @@ export default {
         ._about-us {
             ._about-bg {
                 height: 310px !important;
+
+                p {
+                    font-size: 24px;
+                    line-height: 34px;
+                }
+            }
+
+            ._about-all {
+                padding: 24px 0;
+
+                h3 {
+                    font-size: 18px;
+                    line-height: 20px;
+                    margin-bottom: 36px;
+                }
+            }
+
+
+            ._all-list {
+                li {
+                    & > div {
+                        width: 64px;
+                        height: 74px;
+                        margin-bottom: 6px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        line-height: 16px;
+                    }
+
+                    &:nth-of-type(2) {
+                        margin: 0 25px;
+                    }
+                }
+            }
+
+            ._lead {
+                padding: 24px 11px 0 !important;
+
+                ._lead-title {
+                    font-size: 20px;
+                    line-height: 20px;
+                    margin-bottom: 24px;
+                }
+
+                ._lead-list {
+                    li {
+                        height: 170px;
+                        padding: 20px;
+                        margin-bottom: 24px;
+
+                        ._list-title {
+                            font-size: 18px;
+                        }
+
+                        ._hover-be {
+                            img {
+                                width: 64px;
+                            }
+                        }
+
+                        ._hover-af {
+                            padding: 6px 20px 0;
+                            font-size: 12px;
+                            line-height: 18px;
+
+                            img {
+                                width: 57px;
+                            }
+                        }
+
+                        &:nth-of-type(2) {
+                            &:hover {
+                                height: 240px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
