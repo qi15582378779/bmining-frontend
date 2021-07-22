@@ -17,5 +17,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+    @media (max-width: 768px) {
+        ._main {
+            position: relative;
+            padding-top: 64px;
+        }
+    }
 </style>

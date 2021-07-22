@@ -5,8 +5,8 @@
         data-300="background-color: rgba(255, 255, 255, 1);">
         <div class="_header-left">
             <div>
-                <i class="iconfont" v-html="isOpen ? '&#xe61f;' : '&#xe61e;'"
-                    @click="openClick"></i>
+                <img src="../../assets/images/menu.svg" alt="" class="_header-menu"
+                    @click="openClick">
                 <img class="_header-logo _logo-light" src="../../assets/images/logo/logo-light.svg"
                     alt=""
                     data-0="opacity: 1" data-300="opacity: 0">
@@ -16,17 +16,28 @@
             </div>
         </div>
 
-        <ul class="_header-right" :class="{'_open': isOpen}">
-            <li v-for="(el, index) in navList" :key="index">
-                <router-link
-                    :to="el.url"
-                    :active-class="'_active'"
-                    data-0="color: rgb(255, 255, 255);"
-                    data-300="color: rgb(30, 35, 65);">{{el.name}}
-                    <img src="../../assets/images/bor.svg" alt="" class="_bor-img">
-                </router-link>
-            </li>
-        </ul>
+        <div class="_header-right" :class="{'_open': isOpen}" @click.self="closeClick">
+            <ul>
+                <li class="_app-logo">
+                    <img src="../../assets/images/logo/logo-dark.svg" alt="">
+                </li>
+                <li v-for="(el, index) in navList"
+                    :key="index"
+                    class="_app-li"
+                    @click="closeClick"
+                >
+                    <router-link
+                        :to="el.url"
+                        :active-class="'_active'"
+                        data-0="color: rgb(255, 255, 255);"
+                        data-300="color: rgb(30, 35, 65);"
+                    >{{el.name}}
+                        <img src="../../assets/images/bor.svg" alt="" class="_bor-img">
+                    </router-link>
+                </li>
+            </ul>
+        </div>
+
     </div>
 </template>
 
@@ -107,14 +118,11 @@ export default {
     },
     methods: {
         openClick() {
-            this.isOpen = !this.isOpen;
-            console.log('isOpen===>', this.isOpen)
+            this.isOpen = true;
         },
-        toUrl(url) {
-            if (window.innerWidth <= 768) {
-                this.isOpen = false;
-            }
-            window.open(url)
+        closeClick() {
+            this.isOpen = false;
+            console.log('isOpen===>', this.isOpen)
         }
     }
 }
@@ -149,22 +157,30 @@ export default {
                 display: none;
             }
 
-            img {
+            ._header-menu {
+                display: none;
+            }
+
+            ._header-logo {
                 height: 45px;
                 position: absolute;
                 top: 0;
                 left: 0;
                 transition: all .2s ease;
             }
-
-            ._h5-app {
-                display: none;
-            }
         }
 
         ._header-right {
-            display: flex;
-            align-items: center;
+            ul {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+            }
+
+            ._app-logo {
+                display: none;
+            }
 
             li {
                 margin-right: 100px;
@@ -218,85 +234,99 @@ export default {
         ._main-header {
             height: 64px;
             padding: 0;
-            position: relative;
-            margin-bottom: -64px;
 
             ._header-left {
                 width: 100%;
-                padding: 0 10px;
-                justify-content: space-between;
+                height: 100%;
+                background-color: #ffffff;
 
                 & > div {
-                    display: flex;
-                    align-items: center;
-                }
+                    width: 100%;
+                    height: 100%;
 
-                i {
-                    display: block;
-                    color: var(--col-main);
-                    font-size: 20px;
-                    margin-right: 12px;
-                }
+                    ._header-menu {
+                        display: block;
+                        width: 24px;
+                        margin-left: 11px;
+                    }
 
-                img {
-                    height: 22px;
-                }
+                    ._header-logo {
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
 
-                ._h5-app {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    background: var(--col-bg);
-                    border-radius: 8px;
-                    width: 64px;
-                    height: 22px;
-                    color: #ffffff;
-                    font-weight: bold;
-                    font-size: 8px;
+                    ._logo-light {
+                        opacity: 0 !important;
+                    }
+
+                    ._logo-dark {
+                        opacity: 1 !important;
+                    }
                 }
             }
-
 
             ._header-right {
                 position: fixed;
                 display: block;
-                width: 100%;
-                height: 0;
-                background: #ffffff;
-                top: 64px;
+                width: 0;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.5);
+                top: 0;
                 left: 0;
                 z-index: 100;
                 transition: all .2s;
                 overflow: hidden;
 
                 &._open {
-                    height: 100vh;
+                    width: 100%;
                 }
 
-                li {
-                    width: 100%;
-                    height: 32px;
-                    margin-right: 0;
-                    display: flex;
-                    align-items: center;
-                    padding: 0 14px;
-                    font-size: 12px;
-                    margin-bottom: 14px;
+                ul {
+                    display: block;
+                    width: calc(100% - 55px);
+                    height: 100%;
+                    background: #ffffff;
 
-                    &:nth-of-type(1) {
-                        margin-top: 14px;
-                    }
+                    li {
+                        width: 100%;
+                        margin: 0;
+                        overflow: hidden;
 
+                        &._app-logo {
+                            height: 122px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
 
-                    color: #292C2F;
+                            img {
+                                height: 47px;
+                            }
+                        }
 
-                    &:hover {
-                        background: #F4F4F4;
-                        color: var(--col-main);
-                    }
+                        &._app-li {
+                            height: 60px;
 
-                    &:nth-last-of-type(1) {
-                        display: none;
+                            a {
+                                display: flex;
+                                align-items: center;
+                                width: 100%;
+                                height: 100%;
+                                padding: 0 24px;
+                                border-bottom: 1px solid #F0F0F0;
+                                color: #1E2341 !important;
+
+                                &:hover, &._active {
+                                    color: #345FFA !important;
+                                    background: #E9E9E9;
+                                    border-bottom-color: #E9E9E9;
+
+                                    ._bor-img {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

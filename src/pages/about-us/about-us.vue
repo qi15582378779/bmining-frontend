@@ -89,7 +89,7 @@ export default {
             ],
             activeAllFlag: false,
             activeListFlag: false,
-            bgHeight: window.innerHeight + 'px'
+            bgHeight: window.innerWidth < 768 ? 'auto' : window.innerHeight + 'px'
         }
     },
     computed: {
@@ -101,7 +101,6 @@ export default {
     watch: {
         scrollTop: {
             handler(val) {
-
                 console.log(window.innerHeight)
                 if (this.direction === 'down' && val > 350) {
                     this.activeAllFlag = true;
@@ -130,7 +129,6 @@ export default {
 
         ._about-bg {
             width: 100%;
-
             background-image: url("../../assets/images/about-us/about_us-bg.png");
             background-repeat: no-repeat;
             background-position: 100% 100%;
@@ -407,6 +405,14 @@ export default {
 
             ._lead-list {
                 justify-content: center;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        ._about-us {
+            ._about-bg {
+                height: 310px !important;
             }
         }
     }
