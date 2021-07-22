@@ -177,7 +177,7 @@ export default {
                     }
                 }
 
-                &:hover{
+                &:hover {
                     p {
                         color: #9BC456;
                     }
@@ -221,6 +221,62 @@ export default {
                 }
             }
 
+        }
+    }
+
+    @media (max-width: 768px) {
+        ._team {
+            padding-bottom: 14px;
+
+            ._team-bg {
+                height: 230px;
+
+                div {
+                    padding: 0 12px;
+                    width: 100%;
+                }
+
+                p:nth-of-type(1) {
+                    font-size: 26px;
+                    line-height: 26px;
+                }
+
+                p:nth-of-type(2) {
+                    font-size: 14px;
+                    line-height: 20px;
+                    width: 100%;
+                }
+            }
+
+            ._team-title {
+                margin-top: 24px;
+                margin-bottom: 24px;
+                font-size: 20px;
+                line-height: 20px;
+            }
+
+            ._team-list {
+                justify-content: center;
+
+                li {
+                    width: 258px;
+                    margin-bottom: 14px;
+
+                    & > div {
+                        width: 100%;
+                    }
+
+                    ._img-con {
+                        width: 100%;
+                        margin-bottom: 14px;
+
+                        img {
+                            width: 258px;
+                            height: 258px;
+                        }
+                    }
+                }
+            }
         }
     }
 </style>
