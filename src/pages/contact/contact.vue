@@ -12,9 +12,7 @@
                 <div :class="{'_active': activeFlag}">
                     <p>Get in Touch</p>
                     <p>Email – <a href="mailto:info@bmining.com">info@bmining.com</a></p>
-                    <p>130 King Street West, Suite 1800
-                        Toronto, Ontario, Canada
-                        M5X 2A2</p>
+                    <p>3 Fraser Street, DUO Tower, #05-25, Singapore 189352</p>
                 </div>
             </div>
 

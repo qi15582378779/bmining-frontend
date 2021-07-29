@@ -13,7 +13,7 @@
                     <div class="_list-img" :style="'background-image: url(' + el.imgUrl +')'" v-if="el.isShow"></div>
 <!--                    <img :src="el.imgUrl" alt="" v-if="el.isShow">-->
                     <div v-if="!el.isShow">
-                        <p>{{el.title}}</p>
+                        <p></p>
                         <p v-html="el.txt"></p>
                     </div>
                 </li>
@@ -22,7 +22,6 @@
                 <li v-for="(el, index) of appTxtList" :key="index">
                     <img :src="el.imgUrl" alt="" v-if="el.isShow">
                     <div v-if="!el.isShow">
-                        <p>{{el.title}}</p>
                         <p v-html="el.txt"></p>
                     </div>
                 </li>
@@ -43,27 +42,27 @@ export default {
                 },
                 {
                     isShow: false,
-                    title: 'Mining',
-                    txt: '<span>38</span> BlockBox datacentres operating at a maximum capacity of <span>43 MW</span> producing <span>338 PH/s</span> at full load.'
+                    // title: 'Mining',
+                    txt: 'Our mining operations are primarily conducted in North America. Our bitcoin miners and ethereum miners are located in various states in the United States and Canada.'
                 },
                 {
                     isShow: false,
-                    title: 'Mine hosting service',
-                    txt: 'Abundance of gas, wind, and green energy. <br> Ten-year electricity supply agreement and land lease.'
+                    // title: 'Mine hosting service',
+                    txt: 'Of the Bitcoin miners, 3,015 S19 miners are located in Pennsylvania, USA, and 2,300 S19i miners and 4,685 S19 minersare located in North Carolina. Of the Ethernet miners, 2,300 Panda miners are located in Tennessee, USA, and another 3,000 Panda miners are located in Quebec, Canada.'
                 },
                 {
                     isShow: true,
                     imgUrl: require('../../assets/images/operation/operation-2.png'),
                 },
-                {
-                    isShow: true,
-                    imgUrl: require('../../assets/images/operation/operation-3.png'),
-                },
-                {
-                    isShow: false,
-                    title: 'Mine',
-                    txt: 'we’re strategically positioned to remain at the forefront of the cryptocurrency mining market.'
-                },
+                // {
+                //     isShow: true,
+                //     imgUrl: require('../../assets/images/operation/operation-3.png'),
+                // },
+                // {
+                //     isShow: false,
+                //     title: 'Mine',
+                //     txt: 'we’re strategically positioned to remain at the forefront of the cryptocurrency mining market.'
+                // },
             ],
             appTxtList: [
                 {
@@ -73,7 +72,7 @@ export default {
                 {
                     isShow: false,
                     title: 'Mining',
-                    txt: '<span>38</span> BlockBox datacentres operating at a maximum capacity of <span>43 MW</span> producing <span>338 PH/s</span> at full load.'
+                    txt: 'Our mining operations are primarily conducted in North America. Our bitcoin miners and ethereum miners are located in various states in the United States and Canada.'
                 },
                 {
                     isShow: true,
@@ -82,17 +81,17 @@ export default {
                 {
                     isShow: false,
                     title: 'Mine hosting service',
-                    txt: 'Abundance of gas, wind, and green energy. <br> Ten-year electricity supply agreement and land lease.'
+                    txt: 'Of the Bitcoin miners, 3,015 S19 miners are located in Pennsylvania, USA, and 2,300 S19i miners and 4,685 S19 minersare located in North Carolina. Of the Ethernet miners, 2,300 Panda miners are located in Tennessee, USA, and another 3,000 Panda miners are located in Quebec, Canada.'
                 },
-                {
-                    isShow: true,
-                    imgUrl: require('../../assets/images/operation/operation-3.png'),
-                },
-                {
-                    isShow: false,
-                    title: 'Mine',
-                    txt: 'we’re strategically positioned to remain at the forefront of the cryptocurrency mining market.'
-                },
+                // {
+                //     isShow: true,
+                //     imgUrl: require('../../assets/images/operation/operation-3.png'),
+                // },
+                // {
+                //     isShow: false,
+                //     title: 'Mine',
+                //     txt: 'we’re strategically positioned to remain at the forefront of the cryptocurrency mining market.'
+                // },
             ],
             activeListFlag: false,
             timer: null,
