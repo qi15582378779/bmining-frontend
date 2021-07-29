@@ -94,7 +94,7 @@ export default {
             height: 460px;
             background-image: url("../../assets/images/contact/contact-bg.png");
             background-position: center;
-            background-size: 100% 100%;
+            background-size: cover;
             background-repeat: no-repeat;
             display: flex;
             justify-content: center;
@@ -103,8 +103,8 @@ export default {
 
             p:nth-of-type(1) {
                 font-weight: 500;
-                font-size: 50px;
-                line-height: 50px;
+                font-size: 60px;
+                line-height: 60px;
                 color: #9BC456;
                 text-shadow: 4px 3px 4px rgba(192, 243, 106, 0.2);
                 margin-bottom: 12px;
@@ -112,7 +112,7 @@ export default {
 
             p:nth-of-type(2) {
                 font-size: 28px;
-                line-height: 28px;
+                line-height: 32px;
                 color: #FFFFFF;
             }
 
@@ -122,10 +122,12 @@ export default {
         }
 
         ._contact-form {
-            background-color: #000000;
             height: 810px;
             display: flex;
             justify-content: space-between;
+            width: 1550px;
+            max-width: 100%;
+            margin: 0 auto;
 
             & > div {
                 width: 50%;
@@ -133,13 +135,12 @@ export default {
 
             ._form-left {
                 display: flex;
-                align-items: center;
-                justify-content: flex-end;
+                padding-top: 64px;
+                padding-left: 64px;
 
                 & > div {
-                    width: 600px;
+                    width: 250px;
                     max-width: 100%;
-                    padding-right: 200px;
                 }
 
                 p {
@@ -286,10 +287,12 @@ export default {
 
                     & > div {
                         padding-right: 0;
+                        width: 100%;
                     }
 
                     p {
                         text-align: center;
+
                         &:nth-of-type(3) {
                             padding: 0 60px;
                         }

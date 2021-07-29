@@ -75,7 +75,7 @@ export default {
                     post: 'Advisor'
                 },
                 {
-                    imgUrl: require('../../assets/images/team/team-8.png'),
+                    imgUrl: require('../../assets/images/team/team-9.png'),
                     name: 'Larry',
                     post: 'Advisor'
                 },
@@ -108,8 +108,8 @@ export default {
             width: 100%;
             height: 460px;
             background-image: url("../../assets/images/team/team-bg.png");
-            background-position: 100% 100%;
-            background-size: 100% 100%;
+            background-position: center;
+            background-size: cover;
             background-repeat: no-repeat;
             display: flex;
             justify-content: center;
@@ -118,8 +118,8 @@ export default {
 
             p:nth-of-type(1) {
                 font-weight: 500;
-                font-size: 50px;
-                line-height: 50px;
+                font-size: 60px;
+                line-height: 60px;
                 color: #9BC456;
                 text-shadow: 4px 3px 4px rgba(192, 243, 106, 0.2);
                 margin-bottom: 12px;
@@ -127,7 +127,7 @@ export default {
 
             p:nth-of-type(2) {
                 font-size: 28px;
-                line-height: 28px;
+                line-height: 32px;
                 color: #FFFFFF;
                 width: 700px;
             }

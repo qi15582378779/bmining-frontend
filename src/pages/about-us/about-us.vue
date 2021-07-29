@@ -140,8 +140,8 @@ export default {
             width: 100%;
             background-image: url("../../assets/images/about-us/about_us-bg.png");
             background-repeat: no-repeat;
-            background-position: 100% 100%;
-            background-size: 100% 100%;
+            background-position: center;
+            background-size: cover;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
@@ -151,8 +151,8 @@ export default {
             p {
                 width: 100%;
                 font-weight: 500;
-                font-size: 50px;
-                line-height: 50px;
+                font-size: 72px;
+                line-height: 90px;
                 text-shadow: 4px 3px 4px rgba(192, 243, 106, 0.2);
                 text-align: center;
                 animation: tranTop 1s ease-in-out;

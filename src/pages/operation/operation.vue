@@ -10,7 +10,8 @@
         <ul class="_operation-list" :class="{'_active-list': activeListFlag}">
             <template v-if="appFlag">
                 <li v-for="(el, index) of txtList" :key="index">
-                    <img :src="el.imgUrl" alt="" v-if="el.isShow">
+                    <div class="_list-img" :style="'background-image: url(' + el.imgUrl +')'" v-if="el.isShow"></div>
+<!--                    <img :src="el.imgUrl" alt="" v-if="el.isShow">-->
                     <div v-if="!el.isShow">
                         <p>{{el.title}}</p>
                         <p v-html="el.txt"></p>
@@ -112,15 +113,14 @@ export default {
 <style scoped lang="scss">
     ._operation {
         width: 100%;
-        /*padding-bottom: 52px;*/
         touch-action: pan-y;
 
         ._operation-bg {
             width: 100%;
             height: 460px;
             background-image: url("../../assets/images/operation/operation-bg.png");
-            background-position: 100% 100%;
-            background-size: 100% 100%;
+            background-position: center;
+            background-size: cover;
             background-repeat: no-repeat;
             display: flex;
             justify-content: center;
@@ -129,8 +129,8 @@ export default {
 
             p:nth-of-type(1) {
                 font-weight: 500;
-                font-size: 50px;
-                line-height: 50px;
+                font-size: 60px;
+                line-height: 60px;
                 color: #9BC456;
                 text-shadow: 4px 3px 4px rgba(192, 243, 106, 0.2);
                 margin-bottom: 12px;
@@ -151,6 +151,9 @@ export default {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            width: 1550px;
+            max-width: 100%;
+            margin: 0 auto;
 
             li {
                 width: 50%;
@@ -165,6 +168,14 @@ export default {
                 img {
                     width: 100%;
                     height: 100%;
+                }
+
+                ._list-img {
+                    width: 100%;
+                    height: 100%;
+                    background-position: center;
+                    background-size: auto 100%;
+                    background-repeat: no-repeat;
                 }
 
                 &:nth-of-type(odd) {
