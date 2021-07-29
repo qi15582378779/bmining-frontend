@@ -122,7 +122,7 @@ export default {
         }
 
         ._contact-form {
-            height: 810px;
+            height: 724px;
             display: flex;
             justify-content: space-between;
             width: 1550px;
@@ -199,14 +199,14 @@ export default {
         ._form-right {
             height: 100%;
             background-color: #1F272F;
-            padding: 88px 64px;
+            padding: 64px;
         }
 
         ._form-title {
             font-size: 24px;
             line-height: 24px;
             color: #8D8D8D;
-            margin-bottom: 50px;
+            margin-bottom: 38px;
         }
 
         ._form-box {
@@ -214,7 +214,7 @@ export default {
             flex-wrap: wrap;
 
             ._form-input {
-                margin-bottom: 50px;
+                margin-bottom: 38px;
 
                 &:nth-of-type(odd) {
                     padding-right: 33px;
@@ -227,7 +227,7 @@ export default {
         }
 
         ._form-btn {
-            margin-top: 35px;
+            margin-top: 38px;
             display: flex;
             justify-content: flex-end;
 
