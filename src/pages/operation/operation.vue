@@ -187,7 +187,7 @@ export default {
                 }
 
                 &:nth-of-type(2) div {
-                    width: 485px;
+                    width: 600px;
                 }
 
                 &:nth-of-type(3) div {
