@@ -89,7 +89,11 @@
 
                 <div>
                     <el-input v-model="email" placeholder="Enter your e-mail"
-                        class="_investors-input"></el-input>
+                        class="_investors-input">
+                        <template slot="append">
+                            <img src="../../assets/images/investors/chevron-right.svg" alt="">
+                        </template>
+                    </el-input>
                 </div>
             </div>
         </div>

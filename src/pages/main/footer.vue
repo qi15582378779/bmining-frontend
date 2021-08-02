@@ -9,7 +9,7 @@
                         :active-class="'_active'">{{el.name}}
                     </router-link>
                 </template>
-                <p>©️2021 Blue Ridge Mining Group Corp.</p>
+                <p>©️2021 Blue Ridge BM Group Corp.</p>
             </div>
             <div class="_footer-right">
                 <img src="../../assets/images/logo/logo-light.svg" alt="">
@@ -31,6 +31,10 @@ export default {
                 {
                     name: 'OPERAITION',
                     url: '/operation'
+                },
+                {
+                    name: 'INVESTORS',
+                    url: '/investors'
                 },
                 {
                     name: 'TEAM',
