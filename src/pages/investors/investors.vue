@@ -2,7 +2,7 @@
     <div class="_investors">
         <div class="_investors-bg">
             <div>
-                <p>Corporate Overview</p>
+                <p>{{title}}</p>
             </div>
         </div>
 
@@ -11,12 +11,13 @@
                 <ul>
                     <li>Index</li>
                     <li v-for="(item, index) of lfList" :key="index"
-                        :class="{'_active': lfNum === index}" @click="showRt(index)">{{item.name}}
+                        :class="{'_active': lfNum === index}" @click="showRt(index, item.name)">{{item.name}}
                     </li>
                 </ul>
             </div>
             <div class="_investors-rt">
-                <div class="_rt-box">
+                <div class="_rt-box"
+                    :class="[{'_rt-1-hi': lfNum === 0}, {'_rt-2-hi': lfNum === 1}, {'_rt-3-hi': lfNum === 2}]">
                     <div class="_rt-1" :class="{'_active': lfNum === 0}">
                         <div>Corporate Overview</div>
                         <div>Bmining is one of the oldest, largest and most innovative bitcoin
@@ -112,12 +113,14 @@ export default {
                 }
             ],
             lfNum: 0,
-            email: null
+            email: null,
+            title: 'Corporate Overview'
         }
     },
     methods: {
-        showRt(index) {
-            this.lfNum = index
+        showRt(index, name) {
+            this.lfNum = index;
+            this.title = name;
         }
     }
 }
@@ -203,9 +206,11 @@ export default {
             width: 100%;
             height: 100%;
             position: relative;
+            transition: all .2s;
 
             ._active {
                 opacity: 1 !important;
+                z-index: 1 !important;
             }
         }
 
@@ -216,7 +221,8 @@ export default {
             top: 0;
             left: 0;
             opacity: 0;
-            transition: opacity .2s ease;
+            z-index: -1;
+            transition: all .2s ease;
 
             div {
                 &:nth-of-type(1) {
@@ -240,7 +246,8 @@ export default {
             top: 0;
             left: 0;
             opacity: 0;
-            transition: opacity .2s ease;
+            z-index: -1;
+            transition: all .2s ease;
 
             div {
                 &:nth-of-type(1) {
@@ -251,7 +258,7 @@ export default {
 
                 &:nth-of-type(2) {
                     p {
-                        height: 40px;
+                        min-height: 40px;
                         display: flex;
                         align-items: center;
                         border-bottom: 1px solid rgba(#8D8D8D, .5);
@@ -267,6 +274,13 @@ export default {
                                 display: inline-flex;
                                 width: 200px;
                             }
+                            &:nth-of-type(2) {
+                                flex: 1;
+                                transition: color .2s ease;
+                                &:hover {
+                                    color: #9BC456;
+                                }
+                            }
                         }
                     }
                 }
@@ -280,7 +294,8 @@ export default {
             top: 0;
             left: 0;
             opacity: 0;
-            transition: opacity .2s ease;
+            z-index: -1;
+            transition: all .2s ease;
 
             div {
                 font-size: 36px;
@@ -342,6 +357,143 @@ export default {
 
                 &:nth-of-type(2) {
                     padding-left: 50px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        ._investors {
+            ._investors-bg {
+                height: 230px;
+                background-position: center;
+                background-size: auto 100%;
+
+                div {
+                    padding: 0 12px;
+                    width: 100%;
+                }
+
+                p:nth-of-type(1) {
+                    font-size: 26px;
+                    line-height: 26px;
+                }
+            }
+
+            ._investors-container {
+                display: block;
+                height: auto;
+            }
+
+            ._investors-lf {
+                width: 100%;
+                padding: 34px 24px;
+
+                ul {
+                    li {
+                        &:nth-of-type(1) {
+                            font-size: 24px;
+                        }
+
+                    }
+                }
+            }
+
+            ._investors-rt {
+                width: 100%;
+                padding: 24px;
+            }
+
+            ._rt-1-hi {
+                height: 620px;
+            }
+
+            ._rt-2-hi {
+                height: 400px;
+            }
+
+            ._rt-3-hi {
+                height: 340px;
+            }
+
+            ._rt-1 {
+                div {
+                    &:nth-of-type(1) {
+                        font-size: 24px;
+                        margin-bottom: 26px;
+                    }
+
+                    &:nth-of-type(2) {
+                        font-size: 14px;
+                        line-height: 24px;
+                    }
+                }
+            }
+
+            ._rt-2 {
+                div {
+                    &:nth-of-type(1) {
+                        font-size: 24px;
+                        margin-bottom: 26px;
+                    }
+
+                    &:nth-of-type(2) {
+                        p {
+                            height: auto;
+                            min-height: 60px;
+
+                            span {
+                                &:nth-of-type(1) {
+                                    width: 30%;
+                                }
+
+                                &:nth-of-type(2) {
+                                    flex: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            ._rt-3 {
+
+                div {
+                    font-size: 24px;
+                }
+            }
+
+            ._investors-bt {
+                padding: 24px;
+                height: auto;
+            }
+
+            ._bt-box {
+                display: block;
+
+                div {
+                    width: 100%;
+
+                    &:nth-of-type(1) {
+                        padding-left: 0;
+
+                        p {
+                            &:nth-of-type(1) {
+                                font-size: 20px;
+                                margin-bottom: 24px;
+                            }
+
+                            &:nth-of-type(2) {
+                                font-size: 14px;
+                                line-height: 22px;
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(2) {
+                        padding-left: 0;
+                        padding-top: 24px;
+                    }
                 }
             }
         }
