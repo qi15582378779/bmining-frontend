@@ -477,11 +477,12 @@ export default {
             ._bt-box {
                 display: block;
 
-                div {
+                &>div {
                     width: 100%;
 
                     &:nth-of-type(1) {
                         padding-left: 0;
+                        padding-right: 0;
 
                         p {
                             &:nth-of-type(1) {
@@ -498,6 +499,7 @@ export default {
 
                     &:nth-of-type(2) {
                         padding-left: 0;
+                        padding-right: 0;
                         padding-top: 24px;
                     }
                 }
