@@ -29,6 +29,11 @@ export default new Router({
                     component: () => import('../pages/operation/operation')
                 },
                 {
+                    path: 'investors',
+                    name: 'investors',
+                    component: () => import('../pages/investors/investors')
+                },
+                {
                     path: 'team',
                     name: 'team',
                     component: () => import('../pages/team/team')

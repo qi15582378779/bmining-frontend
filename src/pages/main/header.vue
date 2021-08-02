@@ -60,6 +60,10 @@ export default {
                     url: '/operation'
                 },
                 {
+                    name: 'INVESTORS',
+                    url: '/investors'
+                },
+                {
                     name: 'TEAM',
                     url: '/team'
                 },
