@@ -338,11 +338,12 @@ export default {
             display: flex;
             align-items: center;
 
-            div {
-                width: 100%;
+            &>div {
+                /*width: 100%;*/
 
                 &:nth-of-type(1) {
-                    padding-left: 20px;
+                    padding-left: 50px;
+                    padding-right: 50px;
 
                     p {
                         &:nth-of-type(1) {
@@ -361,6 +362,7 @@ export default {
 
                 &:nth-of-type(2) {
                     padding-left: 50px;
+                    padding-right: 50px;
                 }
             }
         }
