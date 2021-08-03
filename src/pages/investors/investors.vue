@@ -11,7 +11,7 @@
                 <ul>
                     <li>Index</li>
                     <li v-for="(item, index) of lfList" :key="index"
-                        :class="{'_active': lfNum === index}" @click="showRt(index, item.name)">{{item.name}}
+                        :class="{'_active': lfNum === index}" @click="showRt(index, item)">{{item.name}}
                     </li>
                 </ul>
             </div>
@@ -88,12 +88,25 @@ export default {
             lfList: [
                 {
                     name: 'Corporate Overview',
+                    do: 'see'
                 },
                 {
                     name: 'Company News',
+                    do: 'see'
                 },
                 {
                     name: 'Reporting',
+                    do: 'see'
+                },
+                {
+                    name: 'Investor Presentation',
+                    do: 'downLoad',
+                    url: ''
+                },
+                {
+                    name: 'Call Transcript',
+                    do: 'downLoad',
+                    url: ''
                 }
             ],
             lfNum: 0,
@@ -102,9 +115,13 @@ export default {
         }
     },
     methods: {
-        showRt(index, name) {
-            this.lfNum = index;
-            this.title = name;
+        showRt(index, data) {
+            if(data.do === 'downLoad'){
+                data.url && window.open(data.url)
+            }else{
+                this.lfNum = index;
+                this.title = data.name;
+            }
         }
     }
 }
