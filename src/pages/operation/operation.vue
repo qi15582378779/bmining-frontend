@@ -22,6 +22,7 @@
                 <li v-for="(el, index) of appTxtList" :key="index">
                     <img :src="el.imgUrl" alt="" v-if="el.isShow">
                     <div v-if="!el.isShow">
+                        <p>{{el.title}}</p>
                         <p v-html="el.txt"></p>
                     </div>
                 </li>
@@ -48,11 +49,11 @@ export default {
                 {
                     isShow: false,
                     // title: 'Mine hosting service',
-                    txt: 'Of the Bitcoin miners, <span>3015 S19</span> miners are located in Pennsylvania, USA, and <span>2300 S19i</span> miners and <span>4685 S19</span> minersare located <span>in North Carolina</span>. Of the Ethernet miners, <span>2300</span> Panda miners are located in Tennessee, <span>USA</span>, and another <span>3000</span> Panda miners are located in <span>Quebec</span>, <span>Canada</span>.'
+                    txt: 'Of the Bitcoin miners, <span>3015 S19</span> miners are located in <span>Pennsylvania</span>, <span>USA</span>, and <span>2300 S19i</span> miners and <span>4685 S19</span> minersare located in <span>North Carolina</span>. Of the Ethernet miners, <span>2300</span> Panda miners are located in <span>Tennessee</span>, <span>USA</span>, and another <span>3000</span> Panda miners are located in <span>Quebec</span>, <span>Canada</span>.'
                 },
                 {
                     isShow: true,
-                    imgUrl: require('../../assets/images/operation/operation-2.jpg'),
+                    imgUrl: require('../../assets/images/operation/operation-2.svg'),
                 },
                 // {
                 //     isShow: true,
@@ -72,16 +73,16 @@ export default {
                 {
                     isShow: false,
                     title: 'Mining',
-                    txt: 'Our mining operations are primarily conducted in North America. Our bitcoin miners and ethereum miners are located in various states in the United States and Canada.'
+                    txt: 'Our mining operations are primarily conducted in <span>North America</span>. Our bitcoin miners and ethereum miners are located in various states in the <span>United States</span> and <span>Canada</span>.'
                 },
                 {
                     isShow: true,
-                    imgUrl: require('../../assets/images/operation/operation-2.png'),
+                    imgUrl: require('../../assets/images/operation/operation-2.svg'),
                 },
                 {
                     isShow: false,
                     title: 'Mine hosting service',
-                    txt: 'Of the Bitcoin miners, 3,015 S19 miners are located in Pennsylvania, USA, and 2,300 S19i miners and 4,685 S19 minersare located in North Carolina. Of the Ethernet miners, 2,300 Panda miners are located in Tennessee, USA, and another 3,000 Panda miners are located in Quebec, Canada.'
+                    txt: 'Of the Bitcoin miners, <span>3015 S19</span> miners are located in <span>Pennsylvania</span>, <span>USA</span>, and <span>2300 S19i</span> miners and <span>4685 S19</span> minersare located in <span>North Carolina</span>. Of the Ethernet miners, <span>2300</span> Panda miners are located in <span>Tennessee</span>, <span>USA</span>, and another <span>3000</span> Panda miners are located in <span>Quebec</span>, <span>Canada</span>.'
                 },
                 // {
                 //     isShow: true,
@@ -206,7 +207,7 @@ export default {
                         &:nth-of-type(1) {
                             font-size: 36px;
                             line-height: 36px;
-                            color: #ffffff;
+                            color: #B2B2B2;
                             margin-bottom: 22px;
                         }
 
@@ -289,10 +290,12 @@ export default {
                     }
 
                     & > div {
+
                         p {
                             &:nth-of-type(1) {
                                 font-size: 26px;
                                 line-height: 26px;
+                                color: #fff;
                             }
 
                             &:nth-of-type(2) {

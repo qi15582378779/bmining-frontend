@@ -38,10 +38,10 @@ export default {
             const scroll = scrollTop - this.i;
             this.i = scrollTop;
             if (scroll < 0) {
-                console.log('up');
+                // console.log('up');
                 this.$store.commit('setScrollDirection', 'up')
             } else {
-                console.log('down');
+                // console.log('down');
                 this.$store.commit('setScrollDirection', 'down')
             }
         }
