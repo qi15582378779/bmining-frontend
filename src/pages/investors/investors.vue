@@ -77,26 +77,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="_investors-bt">
-            <div class="_bt-box">
-                <div>
-                    <p>Get the latest news from BM Group</p>
-                    <p>By providing your e-mail address, you are consenting to receive press
-                        releases, presentations and other information concerning Bmining Mining
-                        Corp.</p>
-                </div>
-
-                <div>
-                    <el-input v-model="email" placeholder="Enter your e-mail"
-                        class="_investors-input">
-                        <template slot="append">
-                            <img src="../../assets/images/investors/chevron-right.svg" alt="">
-                        </template>
-                    </el-input>
-                </div>
-            </div>
-        </div>
     </div>
 </template>
 
@@ -281,6 +261,7 @@ export default {
                             &:nth-of-type(2) {
                                 flex: 1;
                                 transition: color .2s ease;
+                                cursor: pointer;
                                 &:hover {
                                     color: #9BC456;
                                 }
@@ -320,49 +301,6 @@ export default {
                     &:hover {
                         color: #9BC456;
                     }
-                }
-            }
-        }
-
-        ._investors-bt {
-            width: 100%;
-            height: 244px;
-            background: #272E35;
-        }
-
-        ._bt-box {
-            width: 1200px;
-            height: 100%;
-            margin: 0 auto;
-            max-width: 100%;
-            display: flex;
-            align-items: center;
-
-            &>div {
-                /*width: 100%;*/
-
-                &:nth-of-type(1) {
-                    padding-left: 50px;
-                    padding-right: 50px;
-
-                    p {
-                        &:nth-of-type(1) {
-                            font-size: 36px;
-                            color: #ffffff;
-                            margin-bottom: 28px;
-                        }
-
-                        &:nth-of-type(2) {
-                            font-size: 16px;
-                            line-height: 30px;
-                            color: #8D8D8D;
-                        }
-                    }
-                }
-
-                &:nth-of-type(2) {
-                    padding-left: 50px;
-                    padding-right: 50px;
                 }
             }
         }
@@ -466,42 +404,6 @@ export default {
 
                 div {
                     font-size: 24px;
-                }
-            }
-
-            ._investors-bt {
-                padding: 24px;
-                height: auto;
-            }
-
-            ._bt-box {
-                display: block;
-
-                &>div {
-                    width: 100%;
-
-                    &:nth-of-type(1) {
-                        padding-left: 0;
-                        padding-right: 0;
-
-                        p {
-                            &:nth-of-type(1) {
-                                font-size: 20px;
-                                margin-bottom: 24px;
-                            }
-
-                            &:nth-of-type(2) {
-                                font-size: 14px;
-                                line-height: 22px;
-                            }
-                        }
-                    }
-
-                    &:nth-of-type(2) {
-                        padding-left: 0;
-                        padding-right: 0;
-                        padding-top: 24px;
-                    }
                 }
             }
         }

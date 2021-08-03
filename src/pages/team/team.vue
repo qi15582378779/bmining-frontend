@@ -129,7 +129,7 @@ export default {
                 font-size: 28px;
                 line-height: 32px;
                 color: #FFFFFF;
-                width: 700px;
+                width: 974px;
             }
 
             p {
