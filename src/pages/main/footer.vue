@@ -49,7 +49,7 @@ export default {
                     url: '/about-us'
                 },
                 {
-                    name: 'OPERAITION',
+                    name: 'OPERATION',
                     url: '/operation'
                 },
                 {
