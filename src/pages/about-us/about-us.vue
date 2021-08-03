@@ -3,7 +3,7 @@
         <div class="_about-bg" :style="{'height': bgHeight}">
             <div>
                 <p>One of world-leading</p>
-                <p>crypto currency mining company</p>
+                <p>crypto currency mining companys</p>
             </div>
         </div>
 
@@ -67,9 +67,9 @@ export default {
             ],
             leadersList: [
                 {
-                    title: 'Stable,cost-effcient and clean energy',
+                    title: 'Stable, cost-effcient and clean energy',
                     url: require('../../assets/images/about-us/lead-1.svg'),
-                    msg: 'The well-connected management team is equipped with deep industry know-how and rich experience, and is capable of driving insightful and innovative changes.'
+                    msg: 'North America has abundant natural resources, with sufficient supply of hydropower,solar, wind and biomass energy. Bmining has collaborated with prestigious mining owners in US and Canada to maximize clean energy utilization, save mining cost and improve mining efficiency.'
                 },
                 {
                     title: 'Partnership with the world’s primer miners',
@@ -77,14 +77,14 @@ export default {
                     msg: 'Bmining has partnered with top suppliers of the industry, enjoying the guaranteed and priority access to the industry’s most advanced miners. Thereby, Bmining has minimized supply constraints and created unique barrier to entry. Bmining is also able to leverage the relatively stable price to hedge crypto market volatility.'
                 },
                 {
-                    title: 'Experienced management team extensive network',
+                    title: 'Experienced management team extensive and network',
                     url: require('../../assets/images/about-us/lead-3.svg'),
                     msg: 'The well-connected management team is equipped with deep industry know-how and rich experience, and is capable of driving insightful and innovative changes.'
                 },
                 {
                     title: 'World-class technology crew',
                     url: require('../../assets/images/about-us/lead-4.svg'),
-                    msg: 'The well-connected management team is equipped with deep industry know-how and rich experience, and is capable of driving insightful and innovative changes.'
+                    msg: 'Bmining’s R&D Team co-developed an innovative immersion cooling solution which can significantly increase the life expectancy & productivity of the hardware miners by 30%.'
                 }
             ],
             activeAllFlag: false,

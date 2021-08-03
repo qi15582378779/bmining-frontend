@@ -3,7 +3,7 @@
         <div class="_operation-bg">
             <div>
                 <p>Bitcoin Mining</p>
-                <p>The process required to secure the blockChain</p>
+                <p>The process required to secure the blockchain</p>
             </div>
         </div>
 
