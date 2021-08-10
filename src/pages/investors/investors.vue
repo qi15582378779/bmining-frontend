@@ -370,7 +370,7 @@ export default {
             }
 
             ._rt-1-hi {
-                height: 620px;
+                height: 420px;
             }
 
             ._rt-2-hi {
