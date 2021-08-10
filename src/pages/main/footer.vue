@@ -5,8 +5,7 @@
                 <div>
                     <p>Get the latest news from BM Group</p>
                     <p>By providing your e-mail address, you are consenting to receive press
-                        releases, presentations and other information concerning Bmining Mining
-                        Corp.</p>
+                        releases, presentations and other information concerning BM Group.</p>
                 </div>
 
                 <div>

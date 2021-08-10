@@ -11,7 +11,7 @@
             <div class="_form-left">
                 <div :class="{'_active': activeFlag}">
                     <p>Get in Touch</p>
-                    <p>Email – <a href="mailto:info@bmining.com">info@bmining.com</a></p>
+                    <p>Email – <a href="mailto:contact@bmining.com">contact@bmining.com</a></p>
                     <p>3 Fraser Street, DUO Tower, #05-25, Singapore 189352</p>
                 </div>
             </div>

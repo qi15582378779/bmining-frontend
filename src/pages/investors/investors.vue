@@ -11,7 +11,9 @@
                 <ul>
                     <li>Index</li>
                     <li v-for="(item, index) of lfList" :key="index"
-                        :class="{'_active': lfNum === index}" @click="showRt(index, item)">{{item.name}}
+                        :class="{'_active': lfNum === index}">
+                        <span @click="showRt(index, item)" v-if="item.do !== 'email'"> {{item.name}}</span>
+                        <a href="mailto:ir@bmining.com" v-if="item.do === 'email'">{{item.name}}</a>
                     </li>
                 </ul>
             </div>
@@ -20,60 +22,53 @@
                     :class="[{'_rt-1-hi': lfNum === 0}, {'_rt-2-hi': lfNum === 1}, {'_rt-3-hi': lfNum === 2}]">
                     <div class="_rt-1" :class="{'_active': lfNum === 0}">
                         <div>Corporate Overview</div>
-                        <div>Bmining is one of the oldest, largest and most innovative bitcoin
-                            miners in the world. Bmining has one of the highest installed capacity
-                            rates in the industry and is #1 globally in held, self-mined Bitcoin of
-                            any crypto miner or publicly traded company. The first miner to be
-                            listed on the TSX, and now listed on NASDAQ, the Bmining leadership team
-                            is continually looking for ways to accelerate innovation in high
-                            performance computing, and the blockchain ecosystem. We are stewards of
-                            powerful, industry-leading solutions, and drivers of Innovation In
-                            Digital Asset mining and High Performance Computing – we apply this
-                            mindset to our revenue diversification, ESG and carbon footprint
-                            reduction strategy. Bmining has a diversified mobile production
-                            platform, located in Alberta Canada and secured with low cost power
-                            contracts. Bmining has been commanding its mining operations and
-                            successfully navigating Bitcoin market cycles since 2018. Stick with the
-                            company that has a plan for how to #grow Shareholder value regardless of
-                            #BTC market direction.
+                        <div>Founded in 2018 and managed by a team consists of highly experienced
+                            professionals in crypto and financial industry, BM Group operates as a
+                            crypto asset technology company that mines cryptocurrencies, with a
+                            focus on the blockchain ecosystem in United States, Canada and
+                            Singapore. BM Group currently has a top total hashing power, with an
+                            industry leading efficiency guaranteed by the most advanced miners and
+                            low cost electricity. BM Group has close partnership with best-in-class
+                            supplier across miners, electricity and maintenance, and plans to
+                            continuously expand the mining scale in the future.
                         </div>
                     </div>
 
-                    <div class="_rt-2" :class="{'_active': lfNum === 1}">
-                        <div>Company News</div>
-                        <div>
-                            <p>
-                                <span>Date</span>
-                                <span>Headline</span>
-                            </p>
+                    <!--                    <div class="_rt-2" :class="{'_active': lfNum === 1}">-->
+                    <!--                        <div>Company News</div>-->
+                    <!--                        <div>-->
+                    <!--                            <p>-->
+                    <!--                                <span>Date</span>-->
+                    <!--                                <span>Headline</span>-->
+                    <!--                            </p>-->
 
-                            <p>
-                                <span>07/02/2021</span>
-                                <span>Bmining and Bitfury BV agree to terminate Investor Rights Agreement</span>
-                            </p>
+                    <!--                            <p>-->
+                    <!--                                <span>07/02/2021</span>-->
+                    <!--                                <span>Bmining and Bitfury BV agree to terminate Investor Rights Agreement</span>-->
+                    <!--                            </p>-->
 
-                            <p>
-                                <span>06/30/2021</span>
-                                <span>Bmining Mining Announces Purchase of 12,000 New MicroBT Miners for Deployment by End of Q4 2021</span>
-                            </p>
+                    <!--                            <p>-->
+                    <!--                                <span>06/30/2021</span>-->
+                    <!--                                <span>Bmining Mining Announces Purchase of 12,000 New MicroBT Miners for Deployment by End of Q4 2021</span>-->
+                    <!--                            </p>-->
 
-                            <p>
-                                <span>06/20/2021</span>
-                                <span>Bmining and Bitfury BV agree to terminate Investor Rights Agreement</span>
-                            </p>
-                        </div>
-                    </div>
+                    <!--                            <p>-->
+                    <!--                                <span>06/20/2021</span>-->
+                    <!--                                <span>Bmining and Bitfury BV agree to terminate Investor Rights Agreement</span>-->
+                    <!--                            </p>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
 
-                    <div class="_rt-3" :class="{'_active': lfNum === 2}">
-                        <template>
-                            <div>Reporting</div>
-                            <p><a href="">Notice of Annual and Special Meeting</a></p>
-                            <p><a href="">Management Information Circular</a></p>
-                            <p><a href="">Q1 2021 Financial Statements</a></p>
-                            <p><a href="">Q1 2021 MD&A</a></p>
-                            <p><a href="">Q1 2021 Conference Call</a></p>
-                        </template>
-                    </div>
+                    <!--                    <div class="_rt-3" :class="{'_active': lfNum === 2}">-->
+                    <!--                        <template>-->
+                    <!--                            <div>Reporting</div>-->
+                    <!--                            <p><a href="">Notice of Annual and Special Meeting</a></p>-->
+                    <!--                            <p><a href="">Management Information Circular</a></p>-->
+                    <!--                            <p><a href="">Q1 2021 Financial Statements</a></p>-->
+                    <!--                            <p><a href="">Q1 2021 MD&A</a></p>-->
+                    <!--                            <p><a href="">Q1 2021 Conference Call</a></p>-->
+                    <!--                        </template>-->
+                    <!--                    </div>-->
                 </div>
             </div>
         </div>
@@ -90,23 +85,23 @@ export default {
                     name: 'Corporate Overview',
                     do: 'see'
                 },
-                {
-                    name: 'Company News',
-                    do: 'see'
-                },
-                {
-                    name: 'Reporting',
-                    do: 'see'
-                },
+                // {
+                //     name: 'Company News',
+                //     do: 'see'
+                // },
+                // {
+                //     name: 'Reporting',
+                //     do: 'see'
+                // },
                 {
                     name: 'Investor Presentation',
                     do: 'downLoad',
                     url: ''
                 },
                 {
-                    name: 'Call Transcript',
-                    do: 'downLoad',
-                    url: ''
+                    name: 'Contact',
+                    do: 'email',
+                    url: 'ir@bmining.com'
                 }
             ],
             lfNum: 0,
@@ -116,9 +111,10 @@ export default {
     },
     methods: {
         showRt(index, data) {
-            if(data.do === 'downLoad'){
+            if (data.do === 'downLoad') {
                 data.url && window.open(data.url)
-            }else{
+            }
+            if (data.do === 'see') {
                 this.lfNum = index;
                 this.title = data.name;
             }
@@ -188,6 +184,10 @@ export default {
                     cursor: pointer;
                     transition: color .2s ease;
 
+                    a {
+                        color: inherit;
+                    }
+
                     &._active, &:hover {
                         font-weight: 500;
                         color: #9BC456;
@@ -201,6 +201,7 @@ export default {
             background: #1F272F;
             padding-top: 64px;
             padding-left: 64px;
+            padding-right: 64px;
         }
 
         ._rt-box {
@@ -275,10 +276,12 @@ export default {
                                 display: inline-flex;
                                 width: 200px;
                             }
+
                             &:nth-of-type(2) {
                                 flex: 1;
                                 transition: color .2s ease;
                                 cursor: pointer;
+
                                 &:hover {
                                     color: #9BC456;
                                 }

@@ -2,7 +2,7 @@
     <div class="_operation">
         <div class="_operation-bg">
             <div>
-                <p>Bitcoin Mining</p>
+                <p>Cryptocurrency Mining</p>
                 <p>The process required to secure the blockchain</p>
             </div>
         </div>
@@ -44,12 +44,12 @@ export default {
                 {
                     isShow: false,
                     // title: 'Mining',
-                    txt: 'Our mining operations are primarily conducted in <span>North America</span>. Our bitcoin miners and ethereum miners are located in various states in the <span>United States</span> and <span>Canada</span>.'
+                    txt: 'Our mining operations are primarily conducted in <span>North America</span>. Our Bitcoin miners and ethereum miners are located in various states in the <span>United States</span> and <span>Canada</span>.'
                 },
                 {
                     isShow: false,
                     // title: 'Mine hosting service',
-                    txt: 'Of the Bitcoin miners, <span>3015 S19</span> miners are located in <span>Pennsylvania</span>, <span>USA</span>, and <span>2300 S19i</span> miners and <span>4685 S19</span> minersare located in <span>North Carolina</span>. Of the Ethernet miners, <span>2300</span> Panda miners are located in <span>Tennessee</span>, <span>USA</span>, and another <span>3000</span> Panda miners are located in <span>Quebec</span>, <span>Canada</span>.'
+                    txt: 'We deployed Bitcoin miners in <span>North Carolina, Pennsylvania, the US</span> and <span>Quebec, Alberta, Canada</span>. For Ethereum, miners are located in <span>North Carolina, the US</span> and <span>Quebec, Canada</span>. Transaction mandates are settled in <span>Singapore</span>.'
                 },
                 {
                     isShow: true,
@@ -73,7 +73,7 @@ export default {
                 {
                     isShow: false,
                     title: 'Mining',
-                    txt: 'Our mining operations are primarily conducted in <span>North America</span>. Our bitcoin miners and ethereum miners are located in various states in the <span>United States</span> and <span>Canada</span>.'
+                    txt: 'Our mining operations are primarily conducted in <span>North America</span>. Our Bitcoin miners and ethereum miners are located in various states in the <span>United States</span> and <span>Canada</span>.'
                 },
                 {
                     isShow: true,
@@ -82,7 +82,7 @@ export default {
                 {
                     isShow: false,
                     title: 'Mine hosting service',
-                    txt: 'Of the Bitcoin miners, <span>3015 S19</span> miners are located in <span>Pennsylvania</span>, <span>USA</span>, and <span>2300 S19i</span> miners and <span>4685 S19</span> minersare located in <span>North Carolina</span>. Of the Ethernet miners, <span>2300</span> Panda miners are located in <span>Tennessee</span>, <span>USA</span>, and another <span>3000</span> Panda miners are located in <span>Quebec</span>, <span>Canada</span>.'
+                    txt: 'We deployed Bitcoin miners in <span>North Carolina, Pennsylvania, the US</span> and <span>Quebec, Alberta, Canada</span>. For Ethereum, miners are located in <span>North Carolina, the US</span> and <span>Quebec, Canada</span>. Transaction mandates are settled in <span>Singapore</span>.'
                 },
                 // {
                 //     isShow: true,

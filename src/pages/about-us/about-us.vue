@@ -2,7 +2,7 @@
     <div class="_about-us">
         <div class="_about-bg" :style="{'height': bgHeight}">
             <div>
-                <p>Word-leading</p>
+                <p>World-leading</p>
                 <p>Cryptocurrency Mining Company</p>
             </div>
         </div>
@@ -24,7 +24,7 @@
         </div>
 
         <div class="_container _lead" :class="{'_active-lead': activeListFlag}">
-            <div class="_lead-title">Digital Asset Mining Leaders</div>
+            <div class="_lead-title">Crypto Asset Mining Leaders</div>
             <ul class="_lead-list">
                 <li v-for="(el, index) of leadersList" :key="index">
                     <p class="_list-title">{{el.title}}</p>
@@ -62,19 +62,19 @@ export default {
                 {
                     img: require('../../assets/images/about-us/all-3.svg'),
                     imgHover: require('../../assets/images/about-us/all-3-hover.svg'),
-                    name: 'Mine'
+                    name: 'Financial business'
                 }
             ],
             leadersList: [
                 {
-                    title: 'Stable, cost-effcient and clean energy',
+                    title: 'Stable, cost-efficient,and clean energy',
                     url: require('../../assets/images/about-us/lead-1.svg'),
-                    msg: 'North America has abundant natural resources, with sufficient supply of hydropower,solar, wind and biomass energy. Bmining has collaborated with prestigious mining owners in US and Canada to maximize clean energy utilization, save mining cost and improve mining efficiency.'
+                    msg: 'North America has abundant natural resources, with sufficient supply of hydropower, solar, wind, and biomass energy. BM Group has collaborated with prestigious mining owners in North America to maximize clean energy utilization, save mining cost and improve mining efficiency.'
                 },
                 {
-                    title: 'Partnership with the world’s primer miners',
+                    title: 'Partnership with the world’s premier miners',
                     url: require('../../assets/images/about-us/lead-2.svg'),
-                    msg: 'Bmining has partnered with top suppliers of the industry, enjoying the guaranteed and priority access to the industry’s most advanced miners. Thereby, Bmining has minimized supply constraints and created unique barrier to entry. Bmining is also able to leverage the relatively stable price to hedge crypto market volatility.'
+                    msg: 'BM Group has partnered with top suppliers of the industry, which grants us guaranteed and prioritized access to the most advanced miners in the industry. Thereby, BM Group has minimized supply constraints and created unique barrier to entry. BM Group is also capable of leveraging the relatively stable price to hedge crypto market volatility.'
                 },
                 {
                     title: 'Experienced management team and extensive network',
@@ -82,9 +82,9 @@ export default {
                     msg: 'The well-connected management team is equipped with deep industry know-how and rich experience, and is capable of driving insightful and innovative changes.'
                 },
                 {
-                    title: 'World-class technology crew',
+                    title: 'Clear blueprint for growth',
                     url: require('../../assets/images/about-us/lead-4.svg'),
-                    msg: 'Bmining’s R&D Team co-developed an innovative immersion cooling solution which can significantly increase the life expectancy & productivity of the hardware miners by 30%.'
+                    msg: 'BM Group has a clear blueprint for growth driven both through scaling computing power, and its evolving ecosystem of cryptocurrency exchange services. BM Group aims to acquire BTC mining rigs to reach a hash rate of 12.5 EH/s by 2025. In addition to further investments in computing power, BM Group’s future growth strategy will be driven by expansion into a full spectrum of market-making and other crypto currency exchange services.'
                 }
             ],
             activeAllFlag: false,
