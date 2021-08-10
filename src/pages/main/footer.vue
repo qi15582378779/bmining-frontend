@@ -9,12 +9,31 @@
                 </div>
 
                 <div>
-                    <el-input v-model="email" placeholder="Enter your e-mail"
-                              class="_investors-input">
-                        <template slot="append">
+                    <!--                    <el-input v-model="email" placeholder="Enter your e-mail"-->
+                    <!--                        class="_investors-input">-->
+                    <!--                        <template slot="append">-->
+                    <!--                            <img src="../../assets/images/investors/chevron-right.svg" alt="">-->
+                    <!--                        </template>-->
+                    <!--                    </el-input>-->
+
+                    <form id="ema_signup_form" style="position: relative" target="_blank"
+                        action="https://gem.godaddy.com/signups/subscribe/8ca20e2235674533ae168a960e284a24"
+                        accept-charset="UTF-8" method="post">
+                        <input name="utf8" type="hidden" value="✓"/>
+                        <div class="mimi_field required _investors-input">
+                            <input id="signup_email" name="signup[email]" type="text"
+                                data-required-field="This field is required"
+                                placeholder="Enter your e-mail"/>
+                        </div>
+                        <div class="mimi_field _btn-img">
+                            <input type="submit" class="submit" value=""
+                                id="webform_submit_button" data-default-text="Subscribe"
+                                data-submitting-text="Sending..."
+                                data-invalid-text="↑ You forgot some required fields"
+                                data-choose-list="↑ Choose a list" data-thanks="Thank you!"/>
                             <img src="../../assets/images/investors/chevron-right.svg" alt="">
-                        </template>
-                    </el-input>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -89,7 +108,7 @@ export default {
             display: flex;
             align-items: center;
 
-            &>div {
+            & > div {
                 /*width: 100%;*/
 
                 &:nth-of-type(1) {
@@ -114,7 +133,8 @@ export default {
                 &:nth-of-type(2) {
                     padding-left: 50px;
                     padding-right: 50px;
-                    img{
+
+                    img {
                         cursor: pointer;
                     }
                 }
@@ -172,7 +192,7 @@ export default {
             ._bt-box {
                 display: block;
 
-                &>div {
+                & > div {
                     width: 100%;
 
                     &:nth-of-type(1) {

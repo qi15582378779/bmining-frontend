@@ -76,6 +76,7 @@
 </template>
 
 <script>
+
 export default {
     name: 'investors',
     data() {
@@ -96,7 +97,7 @@ export default {
                 {
                     name: 'Investor Presentation',
                     do: 'downLoad',
-                    url: ''
+                    url: '/presentation.pdf'
                 },
                 {
                     name: 'Contact',

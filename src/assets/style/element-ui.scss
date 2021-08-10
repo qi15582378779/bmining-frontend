@@ -3,23 +3,25 @@
 ._form-input {
     width: 50%;
 
-    p {
+    label {
         font-size: 16px;
         color: #ffffff;
         margin-bottom: 20px;
+        display: inline-block;
     }
 
     input {
         width: 100%;
         height: 55px;
-        background: #3E4750;
+        background: #323A42;
         border: 1px solid #6B7783;
         box-sizing: border-box;
         font-size: 14px;
         color: #FFFFFF;
         border-radius: 0;
+        padding: 0 12px;
 
-        &:hover, &:focus {
+        &:hover, &:focus, &:focus-visible {
             border-color: rgba(155, 196, 86, 0.5);
             box-shadow: 4px 2px 6px rgba(62, 71, 80, 0.89);
         }
@@ -29,13 +31,14 @@
 ._form-textarea {
     width: 100%;
 
-    p {
+    label {
         font-size: 16px;
         color: #ffffff;
         margin-bottom: 20px;
+        display: inline-block;
     }
 
-    textarea {
+    input {
         background: #323A42;
         border: 1px solid #6B7783;
         box-sizing: border-box;
@@ -44,8 +47,9 @@
         border-radius: 0;
         height: 144px !important;
         resize: none;
+        width: 100%;
 
-        &:hover, &:focus {
+        &:hover, &:focus, &:focus-visible {
             border-color: rgba(155, 196, 86, 0.5);
             box-shadow: 4px 2px 6px rgba(62, 71, 80, 0.89);
         }
@@ -64,24 +68,41 @@
         background: transparent;
         font-size: 20px;
         color: #FFFFFF;
+        padding: 0 28px;
 
-        &:hover, &:focus {
+        &:hover, &:focus, &:focus-visible {
             border-color: #9BC456;
             filter: drop-shadow(3px 0px 19px #9BC456);
         }
     }
+}
 
-    .el-input-group__append {
-        border: 0;
-        background: transparent;
-        position: absolute;
-        top: 0;
-        right: 15px;
-        padding: 0;
+._btn-img {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    padding: 0;
+    width: 34px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    input {
         width: 34px;
-        height: 100%;
-        display: flex;
-        align-items: center;
+        height: 34px;
+        background: transparent;
+        border: 0;
+        outline: none;
+        opacity: 0;
+        z-index: 2;
+    }
+
+    img {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        z-index: 1;
     }
 }
 

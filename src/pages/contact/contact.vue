@@ -21,40 +21,85 @@
                     Have a question? We’d love to hear from you.
                 </div>
 
-                <div class="_form-box">
-                    <div class="_form-input">
-                        <p>First Name</p>
-                        <el-input v-model="first_name" placeholder=""></el-input>
-                    </div>
+                <!--                <div class="_form-box">-->
+                <!--                    <div class="_form-input">-->
+                <!--                        <p>First Name</p>-->
+                <!--                        <el-input v-model="first_name" placeholder=""></el-input>-->
+                <!--                    </div>-->
 
-                    <div class="_form-input">
-                        <p>Last Name</p>
-                        <el-input v-model="last_name" placeholder=""></el-input>
-                    </div>
+                <!--                    <div class="_form-input">-->
+                <!--                        <p>Last Name</p>-->
+                <!--                        <el-input v-model="last_name" placeholder=""></el-input>-->
+                <!--                    </div>-->
 
-                    <div class="_form-input">
-                        <p>Email</p>
-                        <el-input v-model="email" placeholder=""></el-input>
-                    </div>
+                <!--                    <div class="_form-input">-->
+                <!--                        <p>Email</p>-->
+                <!--                        <el-input v-model="email" placeholder=""></el-input>-->
+                <!--                    </div>-->
 
-                    <div class="_form-input">
-                        <p>Phone</p>
-                        <el-input v-model="phone" placeholder=""></el-input>
-                    </div>
+                <!--                    <div class="_form-input">-->
+                <!--                        <p>Phone</p>-->
+                <!--                        <el-input v-model="phone" placeholder=""></el-input>-->
+                <!--                    </div>-->
 
-                    <div class="_form-textarea">
-                        <p>Message</p>
-                        <el-input
-                            type="textarea"
-                            placeholder=""
-                            v-model="message">
-                        </el-input>
-                    </div>
-                </div>
+                <!--                    <div class="_form-textarea">-->
+                <!--                        <p>Message</p>-->
+                <!--                        <el-input-->
+                <!--                            type="textarea"-->
+                <!--                            placeholder=""-->
+                <!--                            v-model="message">-->
+                <!--                        </el-input>-->
+                <!--                    </div>-->
+                <!--                </div>-->
 
-                <div class="_form-btn">
-                    <el-button>Send</el-button>
-                </div>
+                <!--                <div class="_form-btn">-->
+                <!--                    <el-button>Send</el-button>-->
+                <!--                </div>-->
+
+                <form id="ema_signup_form" class="_form-box" target="_blank"
+                    action="https://gem.godaddy.com/signups/subscribe/fdfe23910a55474987156d4b25b0e04a"
+                    accept-charset="UTF-8" method="post">
+                    <input name="utf8" type="hidden" value="✓"/>
+                    <div class="mimi_field _form-input">
+                        <label for="signup_first_name">First Name</label>
+                        <br/>
+                        <input id="signup_first_name" name="signup[first_name]" type="text"
+                            data-required-field="This field is required"/>
+                    </div>
+                    <div class="mimi_field _form-input">
+                        <label for="signup_last_name">Last Name</label>
+                        <br/>
+                        <input id="signup_last_name" name="signup[last_name]" type="text"
+                            data-required-field="This field is required"/>
+                    </div>
+                    <div class="mimi_field required _form-input">
+                        <label for="signup_email">Email</label>
+                        <br/>
+                        <input id="signup_email" name="signup[email]" type="text"
+                            data-required-field="This field is required"
+                            placeholder=""/>
+                    </div>
+                    <div class="mimi_field _form-input">
+                        <label for="signup_phone">Phone</label>
+                        <br/>
+                        <input id="signup_phone" name="signup[phone]" type="text"
+                            data-required-field="This field is required"/>
+                    </div>
+                    <div class="mimi_field _form-textarea">
+                        <label for="signup_message">Message</label>
+                        <br/>
+                        <input type="text" name="signup[message]" id="signup_message"
+                            data-required-field="This field is required"/>
+                        <input class="field_type" type="hidden" data-field-type="text_field"/>
+                    </div>
+                    <div class="mimi_field _form-btn">
+                        <input type="submit" class="submit" value="Send"
+                            id="webform_submit_button" data-default-text="Subscribe"
+                            data-submitting-text="Sending..."
+                            data-invalid-text="↑ You forgot some required fields"
+                            data-choose-list="↑ Choose a list" data-thanks="Thank you!"/>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -228,8 +273,9 @@ export default {
             margin-top: 38px;
             display: flex;
             justify-content: flex-end;
+            width: 100%;
 
-            button {
+            input {
                 width: 227px;
                 height: 55px;
                 color: #ffffff;
