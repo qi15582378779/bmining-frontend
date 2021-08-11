@@ -97,7 +97,7 @@ export default {
                 {
                     name: 'Investor Presentation',
                     do: 'downLoad',
-                    url: '/presentation.pdf'
+                    url: ''
                 },
                 {
                     name: 'Contact',
