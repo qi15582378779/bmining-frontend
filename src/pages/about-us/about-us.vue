@@ -146,14 +146,14 @@ export default {
             align-items: center;
             flex-wrap: wrap;
             justify-content: center;
-            color: #9BC456;
+            color: #6383FF;
 
             p {
                 width: 100%;
                 font-weight: 500;
                 font-size: 72px;
                 line-height: 90px;
-                text-shadow: 4px 3px 4px rgba(192, 243, 106, 0.2);
+                text-shadow: 4px 3px 4px rgba(113, 142, 255, 0.2);
                 text-align: center;
                 animation: tranTop 1s ease-in-out;
             }
@@ -281,7 +281,7 @@ export default {
             line-height: 44px;
             text-align: center;
             letter-spacing: 0.1em;
-            color: #9BC456;
+            color: #6383FF;
             margin-bottom: 56px;
             transform: translate(20px, 20px);
             opacity: 0;

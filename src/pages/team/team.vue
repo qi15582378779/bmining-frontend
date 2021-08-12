@@ -47,42 +47,42 @@ export default {
                 {
                     imgUrl: require('../../assets/images/team/team-3.png'),
                     name: 'Y. Tristan Kuo',
-                    post: 'Independent Director/AC Chairman'
+                    post: ''
                 },
                 {
                     imgUrl: require('../../assets/images/team/team-4.png'),
                     name: 'Rahim Noorani',
-                    post: 'Independent Director'
+                    post: ''
                 },
                 {
                     imgUrl: require('../../assets/images/team/team-5.png'),
                     name: 'Jor Law',
-                    post: 'Independent Director'
+                    post: ''
                 },
                 {
                     imgUrl: require('../../assets/images/team/team-6.png'),
                     name: 'Scott J Wade',
-                    post: 'Head of Operations'
+                    post: ''
                 },
                 {
                     imgUrl: require('../../assets/images/team/team-7.png'),
                     name: 'Josh Neuroth',
-                    post: 'Advisor'
+                    post: ''
                 },
                 {
                     imgUrl: require('../../assets/images/team/team-8.png'),
                     name: 'Nima',
-                    post: 'Advisor'
+                    post: ' '
                 },
                 {
                     imgUrl: require('../../assets/images/team/team-9.png'),
                     name: 'Larry',
-                    post: 'Advisor'
+                    post: ' '
                 },
                 {
                     imgUrl: require('../../assets/images/team/team-10.png'),
                     name: 'Kenneth',
-                    post: 'Advisor'
+                    post: ' '
                 }
             ],
             active: false,
@@ -120,8 +120,8 @@ export default {
                 font-weight: 500;
                 font-size: 60px;
                 line-height: 60px;
-                color: #9BC456;
-                text-shadow: 4px 3px 4px rgba(192, 243, 106, 0.2);
+                color: #6383FF;
+                text-shadow: 4px 3px 4px rgba(113, 142, 255, 0.2);
                 margin-bottom: 12px;
             }
 
@@ -198,6 +198,7 @@ export default {
                     &:nth-of-type(2) {
                         font-size: 18px;
                         line-height: 18px;
+                        /*min-height: 18PX;*/
                         color: #8D8D8D;
                     }
                 }

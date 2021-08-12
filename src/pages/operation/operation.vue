@@ -131,8 +131,8 @@ export default {
                 font-weight: 500;
                 font-size: 60px;
                 line-height: 60px;
-                color: #9BC456;
-                text-shadow: 4px 3px 4px rgba(192, 243, 106, 0.2);
+                color: #6383FF;
+                text-shadow: 4px 3px 4px rgba(113, 142, 255, 0.2);
                 margin-bottom: 12px;
             }
 
