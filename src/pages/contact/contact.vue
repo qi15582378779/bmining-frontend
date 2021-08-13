@@ -148,7 +148,7 @@ export default {
                 font-weight: 500;
                 font-size: 60px;
                 line-height: 60px;
-                color: #6383FF;
+                color: #5277FB;
                 text-shadow: 4px 3px 4px rgba(113, 142, 255, 0.2);
                 margin-bottom: 12px;
             }
@@ -182,7 +182,7 @@ export default {
                 padding-left: 64px;
 
                 & > div {
-                    width: 250px;
+                    width: 290px;
                     max-width: 100%;
                 }
 
@@ -206,7 +206,7 @@ export default {
                         color: #FFFFFF;
 
                         a {
-                            color: #9BC456;
+                            color: #5277FB;
                         }
                     }
 
@@ -248,7 +248,7 @@ export default {
         ._form-title {
             font-size: 24px;
             line-height: 24px;
-            color: #8D8D8D;
+            color: #ffffff;
             margin-bottom: 38px;
         }
 
@@ -284,10 +284,11 @@ export default {
                 border: 1px solid #6B7783;
                 border-radius: 0;
                 transition: all .3s ease;
+                font-family: BM;
 
                 &:hover {
-                    background: #A4CC62;
-                    border-color: #A4CC62;
+                    background: #5277FB;
+                    border-color: #5277FB;
                 }
             }
         }

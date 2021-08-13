@@ -40,18 +40,28 @@ export default {
                     post: 'CEO & CFO'
                 },
                 {
+                    imgUrl: require('../../assets/images/team/team-6.png'),
+                    name: 'Scott J Wade',
+                    post: 'North America GM'
+                },
+                {
                     imgUrl: require('../../assets/images/team/team-2.png'),
                     name: 'Jialin Qu',
                     post: 'COO'
                 },
                 {
-                    imgUrl: require('../../assets/images/team/team-3.png'),
-                    name: 'Y. Tristan Kuo',
+                    imgUrl: require('../../assets/images/team/team-4.png'),
+                    name: 'Rahim Noorani',
                     post: ''
                 },
                 {
-                    imgUrl: require('../../assets/images/team/team-4.png'),
-                    name: 'Rahim Noorani',
+                    imgUrl: require('../../assets/images/team/team-8.png'),
+                    name: 'Nima',
+                    post: ' '
+                },
+                {
+                    imgUrl: require('../../assets/images/team/team-3.png'),
+                    name: 'Y. Tristan Kuo',
                     post: ''
                 },
                 {
@@ -60,19 +70,9 @@ export default {
                     post: ''
                 },
                 {
-                    imgUrl: require('../../assets/images/team/team-6.png'),
-                    name: 'Scott J Wade',
-                    post: ''
-                },
-                {
                     imgUrl: require('../../assets/images/team/team-7.png'),
                     name: 'Josh Neuroth',
                     post: ''
-                },
-                {
-                    imgUrl: require('../../assets/images/team/team-8.png'),
-                    name: 'Nima',
-                    post: ' '
                 },
                 {
                     imgUrl: require('../../assets/images/team/team-9.png'),
@@ -120,7 +120,7 @@ export default {
                 font-weight: 500;
                 font-size: 60px;
                 line-height: 60px;
-                color: #6383FF;
+                color: #5277FB;
                 text-shadow: 4px 3px 4px rgba(113, 142, 255, 0.2);
                 margin-bottom: 12px;
             }
@@ -129,7 +129,8 @@ export default {
                 font-size: 28px;
                 line-height: 32px;
                 color: #FFFFFF;
-                width: 974px;
+                width: 1122px;
+                max-width: 100%;
             }
 
             p {
@@ -138,13 +139,13 @@ export default {
         }
 
         ._team-title {
-            margin-top: 113px;
-            text-align: center;
+            width: 1092px;
+            max-width: 100%;
+            margin: 68px auto 63px;
             font-weight: 500;
             font-size: 36px;
             line-height: 36px;
             color: #ffffff;
-            margin-bottom: 132px;
             opacity: 0;
             transition: opacity .6s ease;
         }
@@ -153,22 +154,24 @@ export default {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            padding: 0 55px;
-            max-width: 1550px;
+            width: 1132px;
+            max-width: 100%;
             margin: 0 auto;
 
             li {
                 display: flex;
                 align-items: center;
                 flex-wrap: wrap;
-                width: 352px;
-                margin-bottom: 82px;
+                width: 172px;
+                margin-bottom: 58px;
                 opacity: 0;
                 transition: opacity .6s ease;
+                margin-right: 20px;
+                margin-left: 20px;
 
                 ._img-con {
-                    width: 352px;
-                    height: 352px;
+                    width: 172px;
+                    height: 172px;
                     overflow: hidden;
                     margin-bottom: 18px;
                 }
@@ -189,44 +192,44 @@ export default {
 
                     &:nth-of-type(1) {
                         font-weight: 500;
-                        font-size: 24px;
-                        line-height: 24px;
+                        font-size: 18px;
+                        line-height: 18px;
                         color: #FFFFFF;
                         margin-bottom: 12px;
                     }
 
                     &:nth-of-type(2) {
-                        font-size: 18px;
-                        line-height: 18px;
-                        /*min-height: 18PX;*/
+                        font-size: 14px;
+                        line-height: 14px;
+                        min-height: 14px;
                         color: #8D8D8D;
                     }
                 }
 
                 & > div:hover {
                     p {
-                        color: #9BC456;
+                        color: #5277FB;
                     }
                 }
 
-                &:nth-of-type(1), &:nth-of-type(2) {
-                    width: 50%;
-                    display: flex;
+                /*&:nth-of-type(1), &:nth-of-type(2) {*/
+                /*    width: 50%;*/
+                /*    display: flex;*/
 
-                    ._img-con {
-                        width: 352px;
-                        height: 420px;
-                    }
-                }
+                /*    ._img-con {*/
+                /*        width: 352px;*/
+                /*        height: 420px;*/
+                /*    }*/
+                /*}*/
 
-                &:nth-of-type(1) {
-                    justify-content: flex-end;
-                    padding-right: 5%;
-                }
+                /*&:nth-of-type(1) {*/
+                /*    justify-content: flex-end;*/
+                /*    padding-right: 5%;*/
+                /*}*/
 
-                &:nth-of-type(2) {
-                    padding-left: 5%;
-                }
+                /*&:nth-of-type(2) {*/
+                /*    padding-left: 5%;*/
+                /*}*/
             }
         }
 
@@ -313,17 +316,20 @@ export default {
 
             ._team-title {
                 margin-top: 24px;
-                margin-bottom: 24px;
+                margin-bottom: 58px;
                 font-size: 20px;
                 line-height: 20px;
+                text-align: center;
             }
 
             ._team-list {
                 justify-content: center;
 
                 li {
-                    width: 258px;
+                    width: 140px;
                     margin-bottom: 14px;
+                    margin-right: 18px;
+                    margin-left: 18px;
 
                     & > div {
                         width: 100%;
@@ -331,22 +337,24 @@ export default {
 
                     ._img-con {
                         width: 100%;
-                        height: 258px;
+                        height: 140px;
                         margin-bottom: 14px;
 
                         img {
-                            width: 258px;
-                            height: 258px;
+                            width: 140px;
+                            height: 140px;
                         }
                     }
 
-                    &:nth-of-type(1), &:nth-of-type(2) {
-                        width: 258px;
-                        padding: 0;
-
-                        ._img-con {
-                            width: 258px;
-                            height: 258px;
+                    p {
+                        &:nth-of-type(1) {
+                            font-size: 16px;
+                            line-height: 16px;
+                            margin-bottom: 10px;
+                        }
+                        &:nth-of-type(2) {
+                            font-size: 12px;
+                            line-height: 12px;
                         }
                     }
                 }

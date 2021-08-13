@@ -125,7 +125,7 @@ export default {
                         &:nth-of-type(2) {
                             font-size: 16px;
                             line-height: 30px;
-                            color: #8D8D8D;
+                            color: #ffffff;
                         }
                     }
                 }
@@ -161,12 +161,12 @@ export default {
                 }
 
                 &:hover {
-                    color: #9BC456;
+                    color: #5277FB;
                 }
             }
 
             ._active {
-                color: #9BC456;
+                color: #5277FB;
                 font-weight: 500;
             }
 

@@ -142,7 +142,7 @@ export default {
                 font-weight: 500;
                 font-size: 60px;
                 line-height: 60px;
-                color: #6383FF;
+                color: #5277FB;
                 text-shadow: 4px 3px 4px rgba(113, 142, 255, 0.2);
                 margin-bottom: 12px;
             }
@@ -180,7 +180,7 @@ export default {
                     }
 
                     font-size: 16px;
-                    color: #8D8D8D;
+                    color: #ffffff;
                     margin-bottom: 24px;
                     cursor: pointer;
                     transition: color .2s ease;
@@ -191,7 +191,7 @@ export default {
 
                     &._active, &:hover {
                         font-weight: 500;
-                        color: #9BC456;
+                        color: #5277FB;
                     }
                 }
             }
@@ -230,7 +230,7 @@ export default {
             div {
                 &:nth-of-type(1) {
                     font-size: 36px;
-                    color: #8D8D8D;
+                    color: #ffffff;
                     margin-bottom: 38px;
                 }
 
@@ -370,7 +370,7 @@ export default {
             }
 
             ._rt-1-hi {
-                height: 420px;
+                height: 450px;
             }
 
             ._rt-2-hi {

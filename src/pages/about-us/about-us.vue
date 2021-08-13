@@ -4,6 +4,8 @@
             <div>
                 <p>World-leading</p>
                 <p>Cryptocurrency Mining Company</p>
+                <p>BM Group is devoted to building a prestigious crypto conglomerate and expanding
+                    the business scope to a full spectrum of bespoke crypto services.</p>
             </div>
         </div>
 
@@ -57,7 +59,7 @@ export default {
                 {
                     img: require('../../assets/images/about-us/all-2.svg'),
                     imgHover: require('../../assets/images/about-us/all-2-hover.svg'),
-                    name: 'Mine hosting service'
+                    name: 'Miner hosting service'
                 },
                 {
                     img: require('../../assets/images/about-us/all-3.svg'),
@@ -146,16 +148,27 @@ export default {
             align-items: center;
             flex-wrap: wrap;
             justify-content: center;
-            color: #6383FF;
+            color: #5277FB;
 
             p {
                 width: 100%;
                 font-weight: 500;
-                font-size: 72px;
+                font-size: 64px;
                 line-height: 90px;
                 text-shadow: 4px 3px 4px rgba(113, 142, 255, 0.2);
                 text-align: center;
                 animation: tranTop 1s ease-in-out;
+
+                &:nth-of-type(3) {
+                    width: 1212px;
+                    max-width: 100%;
+                    margin: 28px auto 0;
+                    font-size: 24px;
+                    line-height: 40px;
+                    text-transform: lowercase;
+                    color: #FFFFFF;
+                    text-shadow: 4px 3px 4px rgba(192, 243, 106, 0.2);
+                }
             }
         }
 
@@ -176,11 +189,11 @@ export default {
                 opacity: 0;
 
                 span:nth-of-type(1) {
-                    color: #345FFA;
+                    color: #5277FB;
                 }
 
                 span:nth-of-type(2) {
-                    color: #9BC456;
+                    color: #5277FB;
                 }
             }
         }
@@ -188,11 +201,15 @@ export default {
         ._all-list {
             display: flex;
             justify-content: center;
+            width: 1200px;
+            max-width: 100%;
+            margin: 0 auto;
 
             li {
                 text-align: center;
                 transition: opacity .6s ease;
                 opacity: 0;
+                width: 33.33%;
 
                 & > div {
                     width: 116px;
@@ -228,7 +245,7 @@ export default {
                 }
 
                 &:nth-of-type(2) {
-                    margin: 0 190px;
+                    /*margin: 0 190px;*/
                 }
 
                 &:hover {
@@ -243,7 +260,7 @@ export default {
                     }
 
                     p {
-                        color: #9BC456;
+                        color: #5277FB;
                     }
                 }
             }
@@ -281,7 +298,7 @@ export default {
             line-height: 44px;
             text-align: center;
             letter-spacing: 0.1em;
-            color: #6383FF;
+            color: #5277FB;
             margin-bottom: 56px;
             transform: translate(20px, 20px);
             opacity: 0;
@@ -295,14 +312,14 @@ export default {
 
             li {
                 width: 550px;
-                height: 250px;
+                height: 300px;
                 background: #1F272F;
                 box-shadow: 0 3px 8px 1px #161C23;
                 border-radius: 10px;
                 margin-bottom: 48px;
                 text-align: center;
                 padding: 24px 28px;
-                color: #B2B2B2;
+                color: #ffffff;
                 position: relative;
                 transform: translate(20px, 20px);
                 opacity: 0;
@@ -340,9 +357,9 @@ export default {
                     opacity: 0;
                     text-align: left;
                     padding: 26px 28px 0;
-                    font-size: 14px;
-                    line-height: 24px;
-                    color: #8D8D8D;
+                    font-size: 12px;
+                    line-height: 20px;
+                    color: #ffffff;
 
                     img {
                         margin-top: 12px;
@@ -430,7 +447,15 @@ export default {
 
                 p {
                     font-size: 24px;
-                    line-height: 34px;
+                    line-height: 30px;
+                    padding: 0 20px;
+
+                    &:nth-of-type(3) {
+                        width: 100%;
+                        font-size: 14px;
+                        line-height: 20px;
+                        margin-top: 18px;
+                    }
                 }
             }
 
@@ -475,7 +500,7 @@ export default {
 
                 ._lead-list {
                     li {
-                        height: 170px;
+                        height: 250px;
                         padding: 20px;
                         margin-bottom: 24px;
 
@@ -490,7 +515,7 @@ export default {
                         }
 
                         ._hover-af {
-                            padding: 6px 20px 0;
+                            padding: 10px 20px 0;
                             font-size: 12px;
                             line-height: 18px;
 
@@ -501,7 +526,13 @@ export default {
 
                         &:nth-of-type(2) {
                             &:hover {
-                                height: 200px;
+                                height: 280px;
+                            }
+                        }
+
+                        &:nth-of-type(4) {
+                            &:hover {
+                                height: 300px;
                             }
                         }
                     }

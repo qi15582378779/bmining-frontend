@@ -53,7 +53,7 @@ export default {
                 },
                 {
                     isShow: true,
-                    imgUrl: require('../../assets/images/operation/operation-2.svg'),
+                    imgUrl: require('../../assets/images/operation/operation-2.png'),
                 },
                 // {
                 //     isShow: true,
@@ -77,7 +77,7 @@ export default {
                 },
                 {
                     isShow: true,
-                    imgUrl: require('../../assets/images/operation/operation-2.svg'),
+                    imgUrl: require('../../assets/images/operation/operation-2.png'),
                 },
                 {
                     isShow: false,
@@ -131,7 +131,7 @@ export default {
                 font-weight: 500;
                 font-size: 60px;
                 line-height: 60px;
-                color: #6383FF;
+                color: #5277FB;
                 text-shadow: 4px 3px 4px rgba(113, 142, 255, 0.2);
                 margin-bottom: 12px;
             }
@@ -207,14 +207,14 @@ export default {
                         &:nth-of-type(1) {
                             font-size: 36px;
                             line-height: 36px;
-                            color: #B2B2B2;
-                            margin-bottom: 22px;
+                            color: #ffffff;
+                            /*margin-bottom: 22px;*/
                         }
 
                         &:nth-of-type(2) {
                             font-size: 24px;
                             line-height: 34px;
-                            color: #B2B2B2;
+                            color: #ffffff;
 
                             ::v-deep span {
                                 color: #ffffff;
