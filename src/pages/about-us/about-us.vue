@@ -67,7 +67,7 @@ export default {
             ],
             leadersList: [
                 {
-                    title: 'Stable, cost-efficient,and clean energy',
+                    title: 'Stable, cost-efficient, and clean energy',
                     url: require('../../assets/images/about-us/lead-1.svg'),
                     msg: 'North America has abundant natural resources, with sufficient supply of hydropower, solar, wind, and biomass energy. BM Group has collaborated with prestigious mining owners in North America to maximize clean energy utilization, save mining cost and improve mining efficiency.'
                 },

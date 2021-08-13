@@ -210,7 +210,7 @@ export default {
                     color: #ffffff;
 
                     &:hover, &._active {
-                        color: #9BC456 !important;
+                        color: #5277FB !important;
 
                         ._bor-img {
                             transform: translateX(-50%) scale(1, 1);
@@ -228,7 +228,7 @@ export default {
             li {
                 a {
                     &:hover, &._active {
-                        color: #345FFA !important;
+                        color: #5277FB !important;
                     }
                 }
             }

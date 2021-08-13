@@ -25,11 +25,16 @@
     src: url("../font/Roboto-Regular.ttf");
 }
 
+@font-face {
+    font-family: 'BM';
+    src: url("../font/bm.otf");
+}
+
 
 html, body {
     width: 100%;
     height: auto !important;
-    font-family: Roboto;
+    font-family: BM;
     font-size: 16px;
     font-style: normal;
     background-color: #171E25;
