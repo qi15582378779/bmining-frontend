@@ -2,7 +2,7 @@
     <div class="_team">
         <div class="_team-bg">
             <div>
-                <p>TEAM</p>
+                <p>Team</p>
                 <p>A strong team of executives and directors with
                     deep experience in blockchain, software, Bitcoin mining,
                     investment banking, venture capital, and government.</p>

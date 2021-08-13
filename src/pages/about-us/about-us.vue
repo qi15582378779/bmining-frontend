@@ -165,7 +165,6 @@ export default {
                     margin: 28px auto 0;
                     font-size: 24px;
                     line-height: 40px;
-                    text-transform: lowercase;
                     color: #FFFFFF;
                     text-shadow: 4px 3px 4px rgba(192, 243, 106, 0.2);
                 }
@@ -360,6 +359,7 @@ export default {
                     font-size: 12px;
                     line-height: 20px;
                     color: #ffffff;
+                    font-family: "Bangla MN";
 
                     img {
                         margin-top: 12px;

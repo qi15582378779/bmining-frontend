@@ -2,7 +2,7 @@
     <div class="_contact">
         <div class="_contact-bg">
             <div>
-                <p>CONTACT</p>
+                <p>Contact</p>
                 <p>Interested in getting in touch? Please use the form below.</p>
             </div>
         </div>
@@ -204,6 +204,7 @@ export default {
                         font-size: 16px;
                         line-height: 16px;
                         color: #FFFFFF;
+                        font-family: "Bangla MN";
 
                         a {
                             color: #5277FB;
@@ -215,6 +216,7 @@ export default {
                         line-height: 24px;
                         color: #8D8D8D;
                         margin-bottom: 0;
+                        font-family: "Bangla MN";
                     }
                 }
 
@@ -243,6 +245,7 @@ export default {
             height: 100%;
             background-color: #1F272F;
             padding: 64px;
+            font-family: "Bangla MN";
         }
 
         ._form-title {
@@ -284,7 +287,7 @@ export default {
                 border: 1px solid #6B7783;
                 border-radius: 0;
                 transition: all .3s ease;
-                font-family: BM;
+                font-family: "Bangla MN";
 
                 &:hover {
                     background: #5277FB;

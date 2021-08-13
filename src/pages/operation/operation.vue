@@ -3,15 +3,16 @@
         <div class="_operation-bg">
             <div>
                 <p>Cryptocurrency Mining</p>
-                <p>The process required to secure the blockchain</p>
+                <p>Defends the value of decentralized network in the digital world</p>
             </div>
         </div>
 
         <ul class="_operation-list" :class="{'_active-list': activeListFlag}">
             <template v-if="appFlag">
                 <li v-for="(el, index) of txtList" :key="index">
-                    <div class="_list-img" :style="'background-image: url(' + el.imgUrl +')'" v-if="el.isShow"></div>
-<!--                    <img :src="el.imgUrl" alt="" v-if="el.isShow">-->
+                    <div class="_list-img" :style="'background-image: url(' + el.imgUrl +')'"
+                        v-if="el.isShow"></div>
+                    <!--                    <img :src="el.imgUrl" alt="" v-if="el.isShow">-->
                     <div v-if="!el.isShow">
                         <p></p>
                         <p v-html="el.txt"></p>
@@ -49,7 +50,7 @@ export default {
                 {
                     isShow: false,
                     // title: 'Mine hosting service',
-                    txt: 'We deployed Bitcoin miners in <span>North Carolina, Pennsylvania, the US</span> and <span>Quebec, Alberta, Canada</span>. For Ethereum, miners are located in <span>North Carolina, the US</span> and <span>Quebec, Canada</span>. Transaction mandates are settled in <span>Singapore</span>.'
+                    txt: 'We deployed Bitcoin and Ethereum miners in North Carolina, Pennsylvania, Tennessee, Alberta and Quebec. Transaction mandates are settled in Singapore.'
                 },
                 {
                     isShow: true,
@@ -82,7 +83,7 @@ export default {
                 {
                     isShow: false,
                     title: 'Mine hosting service',
-                    txt: 'We deployed Bitcoin miners in <span>North Carolina, Pennsylvania, the US</span> and <span>Quebec, Alberta, Canada</span>. For Ethereum, miners are located in <span>North Carolina, the US</span> and <span>Quebec, Canada</span>. Transaction mandates are settled in <span>Singapore</span>.'
+                    txt: 'We deployed Bitcoin and Ethereum miners in North Carolina, Pennsylvania, Tennessee, Alberta and Quebec. Transaction mandates are settled in Singapore.'
                 },
                 // {
                 //     isShow: true,
@@ -179,7 +180,7 @@ export default {
                 }
 
                 &:nth-of-type(odd) {
-                    justify-content: flex-end;
+                    /*justify-content: flex-end;*/
                     padding-right: 38px;
                 }
 
@@ -201,9 +202,10 @@ export default {
 
                 & > div {
                     p {
-                        span{
+                        span {
                             color: #fff;
                         }
+
                         &:nth-of-type(1) {
                             font-size: 36px;
                             line-height: 36px;
@@ -215,6 +217,7 @@ export default {
                             font-size: 24px;
                             line-height: 34px;
                             color: #ffffff;
+                            font-family: "Bangla MN";
 
                             ::v-deep span {
                                 color: #ffffff;

@@ -238,6 +238,7 @@ export default {
                     font-size: 16px;
                     line-height: 30px;
                     color: #ffffff;
+                    font-family: "Bangla MN";
                 }
             }
         }
