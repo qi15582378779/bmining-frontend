@@ -194,9 +194,10 @@ export default {
 
                     &:nth-of-type(1) {
                         font-weight: 500;
-                        font-size: 36px;
-                        line-height: 36px;
+                        font-size: 24px;
+                        line-height: 24px;
                         color: #FFFFFF;
+                        font-family: "Bangla MN";
                     }
 
                     &:nth-of-type(2) {

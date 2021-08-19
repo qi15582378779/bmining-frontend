@@ -100,7 +100,7 @@ export default {
                     url: ''
                 },
                 {
-                    name: 'Contact',
+                    name: 'Financials',
                     do: 'email',
                     url: 'ir@bmining.com'
                 }
@@ -229,7 +229,7 @@ export default {
 
             div {
                 &:nth-of-type(1) {
-                    font-size: 36px;
+                    font-size: 16px;
                     color: #ffffff;
                     margin-bottom: 38px;
                 }

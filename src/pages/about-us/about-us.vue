@@ -179,8 +179,8 @@ export default {
             h3 {
                 width: 100%;
                 text-align: center;
-                font-size: 36px;
-                line-height: 36px;
+                font-size: 38px;
+                line-height: 38px;
                 font-weight: 400;
                 letter-spacing: 0.1em;
                 margin-bottom: 68px;
@@ -237,8 +237,8 @@ export default {
 
 
                 p {
-                    font-size: 28px;
-                    line-height: 28px;
+                    font-size: 16px;
+                    line-height: 16px;
                     color: #ffffff;
                     transition: color .2s ease;
                 }
@@ -326,7 +326,7 @@ export default {
 
                 ._list-title {
                     text-align: left;
-                    font-size: 24px;
+                    font-size: 16px;
                 }
 
                 ._hover-be, ._hover-af {
@@ -366,7 +366,7 @@ export default {
                     }
 
                     p {
-                        font-size: 14px;
+                        font-size: 16px;
                     }
                 }
 

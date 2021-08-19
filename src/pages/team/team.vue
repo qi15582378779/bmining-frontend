@@ -56,7 +56,7 @@ export default {
                 },
                 {
                     imgUrl: require('../../assets/images/team/team-8.png'),
-                    name: 'Nima',
+                    name: 'Nima Behestian',
                     post: ' '
                 },
                 {
@@ -143,8 +143,8 @@ export default {
             max-width: 100%;
             margin: 68px auto 63px;
             font-weight: 500;
-            font-size: 36px;
-            line-height: 36px;
+            font-size: 18px;
+            line-height: 18px;
             color: #ffffff;
             opacity: 0;
             transition: opacity .6s ease;

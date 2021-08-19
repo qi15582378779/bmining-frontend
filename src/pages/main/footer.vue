@@ -117,7 +117,7 @@ export default {
 
                     p {
                         &:nth-of-type(1) {
-                            font-size: 36px;
+                            font-size: 16px;
                             color: #ffffff;
                             margin-bottom: 28px;
                         }
